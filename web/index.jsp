@@ -16,7 +16,7 @@
     <!-- Include Menu -->
     <jsp:include page="include/menu.jsp" />       
 
-    <!-- Include Menu -->
+    <!-- Include Login Form -->
     <jsp:include page="form/admin_login.jsp" />
            
     

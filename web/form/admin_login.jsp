@@ -9,21 +9,21 @@
  <div class="row show-grid">
               <div class="col-lg-8" style="padding-left: 8%;padding-top: 2%;">
 
-                    <form action="" method="post" accept-charset="utf-8" class="form-horizontal">       
+                    <form action="login_check.jsp" method="post" accept-charset="utf-8" class="form-horizontal">       
                         <fieldset>
                             <legend>Login</legend>
 
                     <div class="form-group">
                                 <label for="email" class="col-lg-2 control-label">Email*</label>
                       <div class="col-lg-10">
-                        <input type="text" class="form-control" id="email" name="email"  value="" placeholder="Type your Email ID">
+                          <input type="email" class="form-control" id="email" name="email"  value="" placeholder="Type your Email ID" required>
                       </div>
                     </div>
 
                     <div class="form-group">
                                 <label for="password" class="col-lg-2 control-label">Password*</label>
                       <div class="col-lg-10">
-                        <input type="password" class="form-control" id="password" name="password" value="" placeholder="Type your Password">
+                        <input type="password" class="form-control" id="password" name="password" value="" placeholder="Type your Password" required>
                       </div>
                     </div>
 
