@@ -36,12 +36,22 @@
                       
                       out.print("<div class='alert alert-success' role='alert'>Login Successfull, Redirecting to your Panel</div>");
 
-                      if(loginDetails.get(0).equals("2")){
+                       if(loginDetails.get(0).equals("1")){
+                         response.setHeader("Refresh", "2;url=education.jsp"); 
+                      }
+                      else if(loginDetails.get(0).equals("2")){
                          response.setHeader("Refresh", "2;url=bank.jsp"); 
                       }
                       else if(loginDetails.get(0).equals("3")){
                          response.setHeader("Refresh", "2;url=criminal.jsp"); 
                       }
+                      else if(loginDetails.get(0).equals("4")){
+                         response.setHeader("Refresh", "2;url=medical.jsp"); 
+                      }
+                      else if(loginDetails.get(0).equals("5")){
+                         response.setHeader("Refresh", "2;url=job.jsp"); 
+                      }
+                      
                       else{
                          response.setHeader("Refresh", "2;url=index.jsp"); 
                       }
