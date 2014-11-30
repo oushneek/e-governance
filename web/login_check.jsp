@@ -1,5 +1,6 @@
 
 
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import="database.*" %>
 
@@ -30,8 +31,20 @@
                         response.setHeader("Refresh", "2;url=index.jsp"); 
                   }
                   else{
+                      ArrayList<String> loginDetails = new ArrayList<String>();
+                      loginDetails = login.loginDetails(email, pass);
+                      
                       out.print("<div class='alert alert-success' role='alert'>Login Successfull, Redirecting to your Panel</div>");
-                      response.setHeader("Refresh", "2;url=index.jsp"); 
+
+                      if(loginDetails.get(0).equals("2")){
+                         response.setHeader("Refresh", "2;url=bank.jsp"); 
+                      }
+                      else if(loginDetails.get(0).equals("3")){
+                         response.setHeader("Refresh", "2;url=criminal.jsp"); 
+                      }
+                      else{
+                         response.setHeader("Refresh", "2;url=index.jsp"); 
+                      }
                   }
                   %>
                     
