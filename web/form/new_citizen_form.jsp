@@ -9,16 +9,16 @@
 <div class="row show-grid">
               <div class="col-lg-8" style="padding-left: 8%;padding-top: 2%;">
 
-                    <form action="" method="post" accept-charset="utf-8" class="form-horizontal">       
+                    <form action="form_to_db/new_citizen.jsp" method="post" accept-charset="utf-8" class="form-horizontal">       
                         <fieldset>
                             <legend>Add new Citizen</legend>
                             
-                    <div class="form-group">
+                 <!--   <div class="form-group">
                                 <label for="name_en" class="col-lg-3 control-label">National ID NO* :</label>
                       <div class="col-lg-9">
                         <input type="text" class="form-control" id="name_en" name="name_en"  value="" placeholder="kivabe korte hobe jani na">
                       </div>
-                    </div>
+                    </div>-->
 
                     <div class="form-group">
                                 <label for="name_en" class="col-lg-3 control-label">Name(English)* :</label>
@@ -58,20 +58,20 @@
                             
                            
                     <div class="form-group">
-                                <label for="name_en" class="col-lg-3 control-label">Birth Place* :</label>
+                                <label for="birth_place" class="col-lg-3 control-label">Birth Place* :</label>
                       <div class="col-lg-9">
-                          <select class="form-control" id="select">
+                          <select class="form-control" id="birth_place" name="birth_place">
                               <option value="">Select</option>
-                                <option value="Dhaka">Dhaka</option>
-                                <option value="Sylhet">Sylhet</option>
-                                <option value="Chittagong">Chittagong</option>
-                                <option value="Barisal">Barisal</option>
-                                <option value="Rajshahi">Rajshahi</option>
-                                <option value="Khulna">Khulna</option>
-                                <option value="Teknaf">Teknaf</option>
-                                <option value="Comilla">Comilla</option>
-                                <option value="Tangail">Tangail</option>
-                                <option value="Kurigram">Kurigram</option>
+                                <option value="001">Dhaka</option>
+                                <option value="002">Sylhet</option>
+                                <option value="003">Chittagong</option>
+                                <option value="004">Barisal</option>
+                                <option value="005">Rajshahi</option>
+                                <option value="006">Khulna</option>
+                                <option value="007">Teknaf</option>
+                                <option value="008">Comilla</option>
+                                <option value="009">Tangail</option>
+                                <option value="010">Kurigram</option>
                            </select>
                         <!--<input type="text" class="form-control" id="name_en" name="name_en"  value="" placeholder="Type citizens name in ENGLISH">-->
                       </div>
