@@ -5,6 +5,7 @@
         <group>
             <file>file:/F:/NEW_THERAP/e-governance/web/form_to_db/new_citizen.jsp</file>
             <file>file:/F:/NEW_THERAP/e-governance/web/form_to_db/bank_info.jsp</file>
+            <file>file:/F:/NEW_THERAP/e-governance/src/java/database/Bank.java</file>
             <file>file:/F:/NEW_THERAP/e-governance/web/form/bank_form.jsp</file>
             <file>file:/F:/NEW_THERAP/e-governance/src/java/database/Citizen.java</file>
         </group>

@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page import="database.*" %>
+
 <!DOCTYPE html>
 <html lang="en">
     
@@ -17,7 +19,11 @@
 
     <%
     String organization_id=session.getAttribute("organization_id").toString();
-    String national_id=
+    String national_id=request.getParameter("national_id");
+    
+    Bank bank=new Bank();
+    String result=bank.insertBankInfo(organization_id,national_id);
+    out.print(result);
         
     %>
     <div class="row show-grid">
