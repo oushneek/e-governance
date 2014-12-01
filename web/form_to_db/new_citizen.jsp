@@ -4,6 +4,8 @@
     Author     : Tazbeea Tazakka
 --%>
 
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Calendar"%>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import="database.*" %>
@@ -20,28 +22,74 @@
 
     <%
     //Get the Login Credential
-    String name_en = request.getParameter("name_en");
-    String name_bn = request.getParameter("name_bn");
-    String father = request.getParameter("father");
-    String mother = request.getParameter("mother");
-    String date_of_birth = request.getParameter("date_of_birth");
-    String birth_place = request.getParameter("birth_place");
-    String blood_group = request.getParameter("blood_group");
-    String religion = request.getParameter("religion");
-    String present_address = request.getParameter("present_address");
-    String permanent_address = request.getParameter("permanent_address");
+        
+        ArrayList<String> citizenInfo = new ArrayList<String>();
+        citizenInfo.add(request.getParameter("name_en"));
+        citizenInfo.add(request.getParameter("name_bn"));
+        citizenInfo.add(request.getParameter("father"));
+        citizenInfo.add(request.getParameter("mother"));
+        citizenInfo.add(request.getParameter("date_of_birth"));
+        out.println(citizenInfo.get(4));
+        citizenInfo.add(request.getParameter("birth_place"));
+        citizenInfo.add(request.getParameter("blood_group"));
+        citizenInfo.add(request.getParameter("religion"));
+        citizenInfo.add(request.getParameter("present_address"));
+        citizenInfo.add(request.getParameter("permanent_address"));
     
-    String birth_year= date_of_birth.substring(0,4);
+    String birth_year= citizenInfo.get(4).substring(0,4);
+    String birth_place =null;
+    if(citizenInfo.get(5).equals("Dhaka")){
+        birth_place="001";
+    }
+    else if(citizenInfo.get(5).equals("Sylhet")){
+         birth_place="002";
+    }
+    else if(citizenInfo.get(5).equals("Chittagong")){
+         birth_place="003";
+    }
+    else if(citizenInfo.get(5).equals("Barisal")){
+         birth_place="004";
+    }
+    else if(citizenInfo.get(5).equals("Rajshahi")){
+         birth_place="005";
+    }
+    else if(citizenInfo.get(5).equals("Khulna")){
+         birth_place="006";
+    }
+    else if(citizenInfo.get(5).equals("Teknaf")){
+         birth_place="007";
+    }
+    else if(citizenInfo.get(5).equals("Comilla")){
+         birth_place="008";
+    }
+    else if(citizenInfo.get(5).equals("Tangail")){
+         birth_place="009";
+    }
+    else if(citizenInfo.get(5).equals("Kurigram")){
+         birth_place="010";
+    }
     
     String tempNationalID=birth_year+birth_place;
-    
+    String finalid=null;
     Citizen citizen= new Citizen();
-    int nationalID=citizen.maxNationalID(tempNationalID)+1;
+    int nationalID=citizen.maxNationalID(tempNationalID);
+    if(nationalID==0){
+        tempNationalID+="001";
+        finalid=tempNationalID;
+    }
+    else{
+        nationalID+=1;
+        finalid=Integer.toString(nationalID);
+    }
+    Calendar currentdate=Calendar.getInstance();
+    SimpleDateFormat formatter=new SimpleDateFormat("yyyy-MM-dd");
+    String dateNow=formatter.format(currentdate.getTime());
     
-    
-   /* Login login = new Login();
-    boolean decision = login.loginCheck(email, pass);
-     */   
+    String result=citizen.insertCitizen(finalid, citizenInfo, dateNow);
+    out.print("<div class='alert alert-success' role='alert'>New Citizen added . His / Her National Id is"+finalid+"</div>");
+    response.setHeader("Refresh", "5;url=../show_citizen.jsp"); 
+    //out.print(result);
+      
     %>
     <div class="row show-grid">
               <div class="col-lg-8" style="padding-left: 8%;padding-top: 2%;">

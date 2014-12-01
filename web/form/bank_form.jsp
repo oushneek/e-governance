@@ -9,14 +9,15 @@
  <div class="row show-grid">
               <div class="col-lg-8" style="padding-left: 8%;padding-top: 2%;">
 
-                    <form action="login_check.jsp" method="post" accept-charset="utf-8" class="form-horizontal">       
+                    <form action="form_to_db/bank_info.jsp" method="post" accept-charset="utf-8" class="form-horizontal">       
                         <fieldset>
                             <legend>Add New Bank Data</legend>
 
+                    <input type="hidden" name="organization_id" value="<?php echo $id_task; ?>">
                     <div class="form-group">
-                                <label for="email" class="col-lg-2 control-label">National ID*</label>
+                                <label for="national_id" class="col-lg-2 control-label">National ID*</label>
                       <div class="col-lg-10">
-                          <input type="email" class="form-control" id="email" name="email"  value="" placeholder="Type your Email ID" required>
+                          <input type="text" class="form-control" id="national_id" name="national_id"  value="" placeholder="Type your Email ID" required>
                       </div>
                     </div>
 

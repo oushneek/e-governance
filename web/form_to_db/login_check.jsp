@@ -38,18 +38,23 @@
 
                        if(loginDetails.get(0).equals("1")){
                          response.setHeader("Refresh", "2;url=../education.jsp"); 
+                         session.setAttribute("organization_id", loginDetails.get(1));
                       }
                       else if(loginDetails.get(0).equals("2")){
                          response.setHeader("Refresh", "2;url=../bank.jsp"); 
+                         session.setAttribute("organization_id", loginDetails.get(1));
                       }
                       else if(loginDetails.get(0).equals("3")){
                          response.setHeader("Refresh", "2;url=../criminal.jsp"); 
+                         session.setAttribute("organization_id", loginDetails.get(1));
                       }
                       else if(loginDetails.get(0).equals("4")){
                          response.setHeader("Refresh", "2;url=../medical.jsp"); 
+                         session.setAttribute("organization_id", loginDetails.get(1));
                       }
                       else if(loginDetails.get(0).equals("5")){
                          response.setHeader("Refresh", "2;url=../job.jsp"); 
+                         session.setAttribute("organization_id", loginDetails.get(1));
                       }
                       
                       else{

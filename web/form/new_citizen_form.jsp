@@ -62,16 +62,16 @@
                       <div class="col-lg-9">
                           <select class="form-control" id="birth_place" name="birth_place">
                               <option value="">Select</option>
-                                <option value="001">Dhaka</option>
-                                <option value="002">Sylhet</option>
-                                <option value="003">Chittagong</option>
-                                <option value="004">Barisal</option>
-                                <option value="005">Rajshahi</option>
-                                <option value="006">Khulna</option>
-                                <option value="007">Teknaf</option>
-                                <option value="008">Comilla</option>
-                                <option value="009">Tangail</option>
-                                <option value="010">Kurigram</option>
+                                <option value="Dhaka">Dhaka</option>
+                                <option value="Sylhet">Sylhet</option>
+                                <option value="Chittagong">Chittagong</option>
+                                <option value="Barisal">Barisal</option>
+                                <option value="Rajshahi">Rajshahi</option>
+                                <option value="Khulna">Khulna</option>
+                                <option value="Teknaf">Teknaf</option>
+                                <option value="Comilla">Comilla</option>
+                                <option value="Tangail">Tangail</option>
+                                <option value="Kurigram">Kurigram</option>
                            </select>
                         <!--<input type="text" class="form-control" id="name_en" name="name_en"  value="" placeholder="Type citizens name in ENGLISH">-->
                       </div>
