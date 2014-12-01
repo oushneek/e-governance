@@ -9,26 +9,26 @@
  <div class="row show-grid">
               <div class="col-lg-8" style="padding-left: 8%;padding-top: 2%;">
 
-                    <form action="login_check.jsp" method="post" accept-charset="utf-8" class="form-horizontal">       
+                    <form action="form_to_db/criminal_info.jsp" method="post" accept-charset="utf-8" class="form-horizontal">       
                         <fieldset>
                             <legend>Add New Criminal Data</legend>
 
                     <div class="form-group">
-                                <label for="email" class="col-lg-2 control-label">National ID*</label>
+                                <label for="national_id" class="col-lg-2 control-label">National ID*</label>
                       <div class="col-lg-10">
-                          <input type="email" class="form-control" id="email" name="email"  value="" placeholder="Type your Email ID" required>
+                          <input type="text" class="form-control" id="national_id" name="national_id"  value="" placeholder="Type citizen's National ID No" required>
                       </div>
                     </div>
                             
                     <div class="form-group">
-                                <label for="email" class="col-lg-2 control-label">Date*</label>
+                                <label for="date" class="col-lg-2 control-label">Date*</label>
                       <div class="col-lg-10">
                           <input type="date" class="form-control" id="date" name="date"  value="" placeholder="Type your Email ID" required>
                       </div>
                     </div>
                     
                     <div class="form-group">
-                                <label for="email" class="col-lg-2 control-label">Description*</label>
+                                <label for="description" class="col-lg-2 control-label">Description*</label>
                       <div class="col-lg-10">
                           <textarea class="form-control" id="description" name="description"  value="" placeholder="Type Description" required></textarea>
                       </div>
