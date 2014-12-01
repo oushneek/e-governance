@@ -9,7 +9,7 @@
 <div class="row show-grid">
               <div class="col-lg-8" style="padding-left: 8%;padding-top: 2%;">
 
-                    <form action="" method="post" accept-charset="utf-8" class="form-horizontal">       
+                    <form action="form_to_db/medical_info.jsp" method="post" accept-charset="utf-8" class="form-horizontal">       
                         <fieldset>
                             <legend>Add Medical Information of Citizen</legend>
                             

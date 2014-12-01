@@ -9,7 +9,7 @@
 <div class="row show-grid">
               <div class="col-lg-8" style="padding-left: 8%;padding-top: 2%;">
 
-                    <form action="" method="post" accept-charset="utf-8" class="form-horizontal">       
+                    <form action="form_to_db/education_info.jsp" method="post" accept-charset="utf-8" class="form-horizontal">       
                         <fieldset>
                             <legend>Add Education Information of Citizen</legend>
                             
@@ -21,9 +21,9 @@
                     </div>
 
                     <div class="form-group">
-                                <label for="name_en" class="col-lg-3 control-label">Examination* :</label>
+                                <label for="exam" class="col-lg-3 control-label">Examination* :</label>
                       <div class="col-lg-9">
-                          <select class="form-control" id="select">
+                          <select class="form-control" id="select" name="exam">
                               <option value="">Select</option>
                                 <option value="psc">P.S.C.</option>
                                 <option value="jsc">J.S.C.</option>
@@ -35,9 +35,9 @@
                     </div>
                             
                     <div class="form-group">
-                                <label for="name_en" class="col-lg-3 control-label">Board* :</label>
+                                <label for="board" class="col-lg-3 control-label">Board* :</label>
                       <div class="col-lg-9">
-                          <select class="form-control" id="select">
+                          <select class="form-control" id="select" name="board">
                               <option value="">Select</option>
                                 <option value="dhaka">Dhaka</option>
                                 <option value="rajshahi">Rajshahi</option>
@@ -56,7 +56,7 @@
                     <div class="form-group">
                                 <label for="year" class="col-lg-3 control-label">Year* :</label>
                       <div class="col-lg-9">
-                          <input type="number" class="form-control" id="year" name="year"  value="" placeholder="Give Passing Year">
+                          <input type="text" class="form-control" id="year" name="year"  value="" placeholder="Give Passing Year">
                       </div>
                     </div>
                             
