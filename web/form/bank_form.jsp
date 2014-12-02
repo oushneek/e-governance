@@ -36,15 +36,17 @@
                   <div class="panel panel-default">
                   <div class="panel-heading">Search</div>
                     <div class="panel-body">
+                        <form action="search/bank_search.jsp" method="GET">
                           <div class="form-group">
                               <div class="input-group">
                                 <span class="input-group-addon">National ID</span>
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" name="national_id" id="national_id" required="">
                                 <span class="input-group-btn">
-                                  <button class="btn btn-default" type="button">Search</button>
+                                  <button class="btn btn-default" type="submit">Search</button>
                                 </span>
                               </div>
-                            </div>
+                          </div>
+                         </form>
                     </div>
                   </div>
                 </div>
