@@ -1,7 +1,7 @@
 <%-- 
-    Document   : bank_search
-    Created on : Dec 2, 2014, 1:22:18 AM
-    Author     : Ratul
+    Document   : medical_search
+    Created on : Dec 3, 2014, 4:15:39 PM
+    Author     : Tazbeea Tazakka
 --%>
 
 <%@page import="java.util.ArrayList"%>
@@ -13,11 +13,11 @@
 <%
 String national_id = request.getParameter("national_id");
 
-Bank bank = new Bank();
+Medical medical = new Medical();
 
-ArrayList<String> bankSearchResult = new ArrayList<String>();
+ArrayList<String> medicalSearchResult = new ArrayList<String>();
 
-bankSearchResult = bank.searchBankInfo(national_id);
+medicalSearchResult = medical.searchMedicalInfo(national_id);
 
 %>
 
@@ -36,7 +36,7 @@ bankSearchResult = bank.searchBankInfo(national_id);
   <div class="row show-grid">
   <div class="col-lg-12" style="padding-left: 8%;padding-top: 2%;padding-right:6%">
       <%
-      if(bankSearchResult.isEmpty()){
+      if(medicalSearchResult.isEmpty()){
           out.print("<div class='alert alert-danger'>No Record Found with this National ID</a></div>");
       }
       else{
@@ -59,14 +59,16 @@ bankSearchResult = bank.searchBankInfo(national_id);
                          </form>
                     </div>
                   </div>
-    <legend>Bank Search Result</legend>
+    <legend>Medical Search Result</legend>
   <table class="table table-hover">
         <thead>
           <tr>
             <th>National ID</th>
             <th>Citizen Name</th>
-            <th>Banking ID</th>
-            <th>Bank Name</th>
+            <th>Medical ID</th>
+            <th>Medical Name</th>
+            <th>Date</th>
+            <th>Description</th>
             <th>Edit</th>
             <th>Delete</th>
           </tr>
@@ -74,16 +76,20 @@ bankSearchResult = bank.searchBankInfo(national_id);
         </thead>
         <tbody>
           <%
-            if(bankSearchResult.size()>0){
-                for(int i=0;i<bankSearchResult.size();i++){
+            if(medicalSearchResult.size()>0){
+                for(int i=0;i<medicalSearchResult.size();i++){
                 out.print("<tr class='active'>");
-                out.print("<td>"+bankSearchResult.get(i)+"</td>");
+                out.print("<td>"+medicalSearchResult.get(i)+"</td>");
                 i++;
-                out.print("<td>"+bankSearchResult.get(i)+"</td>");
+                out.print("<td>"+medicalSearchResult.get(i)+"</td>");
                 i++;
-                out.print("<td>"+bankSearchResult.get(i)+"</td>");
+                out.print("<td>"+medicalSearchResult.get(i)+"</td>");
                 i++;
-                out.print("<td>"+bankSearchResult.get(i)+"</td>");
+                out.print("<td>"+medicalSearchResult.get(i)+"</td>");
+                i++;
+                out.print("<td>"+medicalSearchResult.get(i)+"</td>");
+                i++;
+                out.print("<td>"+medicalSearchResult.get(i)+"</td>");
                 out.print("<td><button class='btn btn-primary btn-sm'>Edit</button></td>");
                 out.print("<td><button class='btn btn-danger btn-sm'>Delete</button></td>");
                 out.print("</tr>");

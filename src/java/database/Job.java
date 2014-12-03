@@ -13,8 +13,8 @@ import database.*;
  *
  * @author Tazbeea Tazakka
  */
-public class Medical {
-    public String insertMedicalInfo(ArrayList<String> info){
+public class Job {
+    public String insertJobInfo(ArrayList<String> info){
                 Connection conn = null;
                 Statement stmt = null;
                  try{
@@ -26,7 +26,7 @@ public class Medical {
                     //STEP 4: Execute a query
                     stmt = conn.createStatement();
 
-                    String sql="insert into medical(national_id,organization_id,date,description) values ('"+info.get(0)+"','"+info.get(1)+"','"+info.get(2)+"','"+info.get(3)+"')";
+                    String sql="insert into job(national_id,organization_id,joining_date,leaving_date,post) values ('"+info.get(0)+"','"+info.get(1)+"','"+info.get(2)+"','"+info.get(3)+"','"+info.get(4)+"')";
                     System.out.println(sql);
                      
                     stmt.executeUpdate(sql);
@@ -45,7 +45,7 @@ public class Medical {
                   }
         }
 
-    public ArrayList<String> searchMedicalInfo(String national_id){
+    public ArrayList<String> searchJobInfo(String national_id){
         ArrayList<String> jobInfo = new ArrayList<String>();
         jobInfo.clear();
         Connection conn = null;
@@ -60,17 +60,18 @@ public class Medical {
             //STEP 4: Execute a query
             stmt = conn.createStatement();
 
-            String sql = "SELECT national_id,name_en,medical_id,organization_name,date,description FROM medical natural join citizen natural join organization where national_id='"+national_id+"'";
+            String sql = "SELECT national_id,name_en,organization_name,job_id,joining_date,leaving_date,post FROM job natural join citizen natural join organization where national_id='"+national_id+"'";
             ResultSet rs = stmt.executeQuery(sql);
             //STEP 5: Extract data from result set
 
             while(rs.next()){
                   jobInfo.add(rs.getString("national_id"));
                   jobInfo.add(rs.getString("name_en"));
-                  jobInfo.add(rs.getString("medical_id"));
+                  jobInfo.add(rs.getString("job_id"));
                   jobInfo.add(rs.getString("organization_name"));
-                  jobInfo.add(rs.getString("date"));
-                  jobInfo.add(rs.getString("description"));
+                  jobInfo.add(rs.getString("joining_date"));
+                  jobInfo.add(rs.getString("leaving_date"));
+                  jobInfo.add(rs.getString("post"));
             }
 
 

@@ -9,7 +9,7 @@
 <div class="row show-grid">
               <div class="col-lg-8" style="padding-left: 8%;padding-top: 2%;">
 
-                    <form action="" method="post" accept-charset="utf-8" class="form-horizontal">       
+                    <form action="form_to_db/job_info.jsp" method="post" accept-charset="utf-8" class="form-horizontal">       
                         <fieldset>
                             <legend>Add Job Information of Citizen</legend>
                             
@@ -58,13 +58,19 @@
               </div>
                 <div class="col-lg-4" style="padding-top: 4%;padding-right: 2%;">
                   <div class="panel panel-default">
-                  <div class="panel-heading">Note</div>
+                  <div class="panel-heading">Search</div>
                     <div class="panel-body">
-                          <div >
-                              <div >
-                                  <span >*****</span>
+                        <form action="search/job_search.jsp" method="GET">
+                          <div class="form-group">
+                              <div class="input-group">
+                                <span class="input-group-addon">National ID</span>
+                                <input type="text" class="form-control" name="national_id" id="national_id" required="">
+                                <span class="input-group-btn">
+                                  <button class="btn btn-default" type="submit">Search</button>
+                                </span>
                               </div>
-                            </div>
+                          </div>
+                         </form>
                     </div>
                   </div>
                 </div>
