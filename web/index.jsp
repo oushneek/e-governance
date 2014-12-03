@@ -8,7 +8,12 @@
 
 <!DOCTYPE html>
 <html lang="en">
-    
+    <%
+    if(session.getAttribute("organization_id") != null)
+    {
+        response.sendRedirect("logout.jsp");
+    }
+    %>
     <!-- Include Header -->
     <jsp:include page="include/header.jsp" />
  
