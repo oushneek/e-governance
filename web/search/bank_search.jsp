@@ -87,11 +87,15 @@ bankSearchResult = bank.searchBankInfo(national_id);
                 i++;
                 if(bankSearchResult.get(i).equals(session.getAttribute("organization_id"))){
                     out.print("<td><button class='btn btn-primary btn-sm'>Edit</button></td>");
+                    out.print("<td><button class='btn btn-danger btn-sm'>Delete</button></td>");
+
                 }
                 else{
                     out.print("<td><button class='btn btn-primary btn-sm' disabled>Edit</button></td>");
+                    out.print("<td><button class='btn btn-danger btn-sm' disabled>Delete</button></td>");
+                    
+                    
                 }
-                out.print("<td><button class='btn btn-danger btn-sm'>Delete</button></td>");
                 out.print("</tr>");
                 }
             }
