@@ -60,7 +60,7 @@ public class Job {
             //STEP 4: Execute a query
             stmt = conn.createStatement();
 
-            String sql = "SELECT national_id,name_en,organization_name,job_id,joining_date,leaving_date,post FROM job natural join citizen natural join organization where national_id='"+national_id+"'";
+            String sql = "SELECT national_id,name_en,organization_name,job_id,joining_date,leaving_date,post,organization_id FROM job natural join citizen natural join organization where national_id='"+national_id+"'";
             ResultSet rs = stmt.executeQuery(sql);
             //STEP 5: Extract data from result set
 
@@ -72,6 +72,7 @@ public class Job {
                   jobInfo.add(rs.getString("joining_date"));
                   jobInfo.add(rs.getString("leaving_date"));
                   jobInfo.add(rs.getString("post"));
+                  jobInfo.add(rs.getString("organization_id"));
             }
 
 

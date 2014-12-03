@@ -60,7 +60,7 @@ public class Criminal {
             //STEP 4: Execute a query
             stmt = conn.createStatement();
 
-            String sql = "select criminal_id,national_id,date,description,name_en,organization_name from criminal natural join citizen natural join organization where national_id='"+national_id+"'";
+            String sql = "select criminal_id,national_id,date,description,name_en,organization_name,organization_id from criminal natural join citizen natural join organization where national_id='"+national_id+"'";
             ResultSet rs = stmt.executeQuery(sql);
             //STEP 5: Extract data from result set
 
@@ -71,6 +71,7 @@ public class Criminal {
                   criminalInfo.add(rs.getString("date"));
                   criminalInfo.add(rs.getString("description"));
                   criminalInfo.add(rs.getString("organization_name"));
+                  criminalInfo.add(rs.getString("organization_id"));
             }
 
 

@@ -60,7 +60,7 @@ public class Medical {
             //STEP 4: Execute a query
             stmt = conn.createStatement();
 
-            String sql = "SELECT national_id,name_en,medical_id,organization_name,date,description FROM medical natural join citizen natural join organization where national_id='"+national_id+"'";
+            String sql = "SELECT national_id,name_en,medical_id,organization_name,date,description,organization_id FROM medical natural join citizen natural join organization where national_id='"+national_id+"'";
             ResultSet rs = stmt.executeQuery(sql);
             //STEP 5: Extract data from result set
 
@@ -71,6 +71,7 @@ public class Medical {
                   jobInfo.add(rs.getString("organization_name"));
                   jobInfo.add(rs.getString("date"));
                   jobInfo.add(rs.getString("description"));
+                  jobInfo.add(rs.getString("organization_id"));
             }
 
 

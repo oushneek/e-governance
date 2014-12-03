@@ -45,7 +45,7 @@ public class Education {
                   }
         }
     
-        public ArrayList<String> searcEducationInfo(String national_id){
+        public ArrayList<String> searchEducationInfo(String national_id){
         ArrayList<String> educationInfo = new ArrayList<String>();
         Connection conn = null;
         Statement stmt = null;
@@ -59,7 +59,7 @@ public class Education {
             //STEP 4: Execute a query
             stmt = conn.createStatement();
 
-            String sql = "select education_id,national_id,exam_name,year,board,cgpa,name_en,organization_name from education natural join citizen natural join organization where national_id='"+national_id+"'";
+            String sql = "select education_id,national_id,exam_name,year,board,cgpa,name_en,organization_name,organization_id from education natural join citizen natural join organization where national_id='"+national_id+"'";
             ResultSet rs = stmt.executeQuery(sql);
             //STEP 5: Extract data from result set
 
@@ -72,6 +72,7 @@ public class Education {
                   educationInfo.add(rs.getString("board"));
                   educationInfo.add(rs.getString("cgpa"));
                   educationInfo.add(rs.getString("organization_name"));
+                  educationInfo.add(rs.getString("organization_id"));
             }
 
 

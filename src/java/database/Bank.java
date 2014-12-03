@@ -59,7 +59,7 @@ public class Bank {
             //STEP 4: Execute a query
             stmt = conn.createStatement();
 
-            String sql = "SELECT national_id,name_en,organization_name,banking_id FROM banking natural join citizen natural join organization where national_id='"+national_id+"'";
+            String sql = "SELECT national_id,name_en,organization_name,banking_id,organization_id FROM banking natural join citizen natural join organization where national_id='"+national_id+"'";
             ResultSet rs = stmt.executeQuery(sql);
             //STEP 5: Extract data from result set
 
@@ -68,6 +68,7 @@ public class Bank {
                   bankInfo.add(rs.getString("name_en"));
                   bankInfo.add(rs.getString("banking_id"));
                   bankInfo.add(rs.getString("organization_name"));
+                  bankInfo.add(rs.getString("organization_id"));
             }
 
 
