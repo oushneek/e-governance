@@ -56,6 +56,10 @@
                          response.setHeader("Refresh", "2;url=../job.jsp"); 
                          session.setAttribute("organization_id", loginDetails.get(1));
                       }
+                      else if(loginDetails.get(0).equals("6")){
+                         response.setHeader("Refresh", "2;url=../add_new_citizen.jsp"); 
+                         session.setAttribute("organization_id", loginDetails.get(1));
+                      }
                       
                       else{
                          response.setHeader("Refresh", "2;url=../index.jsp"); 

@@ -23,7 +23,7 @@
 
 
                   <ul class="nav navbar-nav navbar-right">
-                    <li><a href=>Login</a></li><li><a href=>Register</a></li>          </ul>
+                    <li><a href="index.jsp">Login</a></li><li><a href=>Register</a></li>          </ul>
 
                 </div>
               </div>
