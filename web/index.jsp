@@ -11,8 +11,26 @@
     <%
     if(session.getAttribute("organization_id") != null)
     {
-        response.sendRedirect("logout.jsp");
+      if(session.getAttribute("organization_id").equals("1")){
+       response.sendRedirect("education.jsp");
+      }
+      else if (session.getAttribute("organization_id").equals("1")){
+       response.sendRedirect("bank.jsp");
+      }
+      else if (session.getAttribute("organization_id").equals("1")){
+       response.sendRedirect("criminal.jsp");
+      }
+      else if (session.getAttribute("organization_id").equals("1")){
+       response.sendRedirect("medical.jsp");
+      }
+      else if (session.getAttribute("organization_id").equals("1")){
+       response.sendRedirect("job.jsp");
+      }
+      else if (session.getAttribute("organization_id").equals("1")){
+       response.sendRedirect("add_new_citizen.jsp");
+      }
     }
+    
     %>
     <!-- Include Header -->
     <jsp:include page="include/header.jsp" />
