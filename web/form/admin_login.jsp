@@ -6,13 +6,20 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<style>
+    #loginDone,#loginError{
+        display:none;
+    }    
+</style>
  <div class="row show-grid">
               <div class="col-lg-8" style="padding-left: 8%;padding-top: 2%;">
 
-                    <form action="form_to_db/login_check.jsp" method="post" accept-charset="utf-8" class="form-horizontal">       
+                    <form id="loginForm"  accept-charset="utf-8" class="form-horizontal">       
                         <fieldset>
                             <legend>Login</legend>
-
+                    
+                     <div id="loginError" class='alert alert-danger' role='alert'>Invalid Email/Password, Please Try Again</div>
+                     <div id="loginDone" class='alert alert-success' role='alert'>Login Successfull, Redirecting to your Panel</div>
                     <div class="form-group">
                                 <label for="email" class="col-lg-2 control-label">Email*</label>
                       <div class="col-lg-10">
@@ -32,7 +39,8 @@
                 <div class="form-group">
                   <div class="col-lg-10 col-lg-offset-2">
 
-                    <button type="submit" class="btn btn-primary">Login</button>
+                    <input type="button" id="loginButton" class="btn btn-primary" value="Login">
+                    
                   </div>
                 </div>
               </fieldset>
@@ -55,3 +63,73 @@
                   </div>
                 </div>
  </div>
+
+
+<script>
+$(document).ready(function(){
+
+    
+  $( "#loginButton" ).click(function() {
+      $("#loginDone").slideUp();
+      $("#loginError").slideUp();
+      
+      if( ($("#email").val() === "") || ($("#password").val() === "")  ){
+          alert("Please Fill Up Every Field");
+      }
+      else if (IsEmail($("#email").val())==false){
+          alert("Invalid Email")
+      }
+      else{
+         $("#loginButton").val("Processing...");
+         $("#loginButton").addClass("disabled");
+         $.ajax({
+                    type  : "POST",
+                    url : "form_to_db/login_check.jsp",
+                    data  : $("#loginForm").serialize(),
+                    }).done(function(data) {
+                      if(data != "0"){
+                          $("#loginDone").slideDown();
+                          $("#loginButton").slideUp();
+                          if(data == "1"){
+                           window.location.replace("education.jsp");   
+                          }
+                          else if (data == "2"){
+                           window.location.replace("bank.jsp");   
+                          }
+                          else if (data == "3"){
+                           window.location.replace("criminal.jsp");   
+                          }
+                          else if (data == "4"){
+                           window.location.replace("medical.jsp");   
+                          }
+                          else if (data == "5"){
+                           window.location.replace("job.jsp");   
+                          }
+                          else if (data == "6"){
+                           window.location.replace("add_new_citizen.jsp");   
+                          }
+                      }
+                      else{
+                          $("#loginButton").removeClass("disabled");
+                          $("#loginButton").val("Login");
+                          $("#loginError").slideDown();
+                      }
+                    }).error(function(data) {
+                        console.log(data);
+                    alert("Try Again to Login");
+                    $("#loginButton").removeClass("disabled");
+                    $("#loginButton").val("Login");
+                    });
+      }
+    });
+    function IsEmail(email) {
+        var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        if(!regex.test(email)) {
+           return false;
+        }else{
+           return true;
+        }
+     }
+
+}); 
+</script>

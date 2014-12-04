@@ -13,6 +13,4 @@
         </div>
 
 </footer>
-<script src="design/js/jquery-1.10.2.min.js"></script>
-<script src="design/js/bootstrap.min.js"></script>
-<script src="design/js/bootswatch.js"></script>
+
