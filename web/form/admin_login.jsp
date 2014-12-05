@@ -90,6 +90,7 @@ $(document).ready(function(){
                       if(data != "0"){
                           $("#loginDone").slideDown();
                           $("#loginButton").slideUp();
+                          alert("Login Successfull");
                           if(data == "1"){
                            window.location.replace("education.jsp");   
                           }
@@ -107,6 +108,9 @@ $(document).ready(function(){
                           }
                           else if (data == "6"){
                            window.location.replace("add_new_citizen.jsp");   
+                          }
+                          else{
+                           window.location.replace("index.jsp");   
                           }
                       }
                       else{

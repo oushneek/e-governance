@@ -46,7 +46,7 @@ medicalSearchResult = medical.searchMedicalInfo(national_id);
                 <div class="panel panel-default">
                   <div class="panel-heading">New Search</div>
                     <div class="panel-body">
-                        <form action="bank_search.jsp" method="GET">
+                        <form action="medical_search.jsp" method="GET">
                           <div class="form-group">
                               <div class="input-group">
                                 <span class="input-group-addon">National ID</span>

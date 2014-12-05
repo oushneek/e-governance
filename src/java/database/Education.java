@@ -86,7 +86,44 @@ public class Education {
                e.printStackTrace();
             }
             return educationInfo;
-    }    
+    }
+    
+        public boolean delete(String national_id,String organization_id,String education_id){
+            Connection conn = null;
+            Statement stmt = null;
+                 try{
+                    //STEP 2: Register JDBC driver
+                    Class.forName(Connect.JDBC_DRIVER);
+                    //STEP 3: Open a connection
+                    conn = DriverManager.getConnection(Connect.DB_URL, Connect.USER, Connect.PASS);
+
+                    //STEP 4: Execute a query
+                    stmt = conn.createStatement();
+
+                    String sql = "DELETE from education where national_id='"+national_id+"' and organization_id='"+organization_id+"' and education_id='"+education_id+"'";
+                     
+                    int what =stmt.executeUpdate(sql);
+                    if(what == 1){
+                        return true;
+                    }
+                    else{
+                        return false;
+                    }
+     
+
+                   
+                 } catch (SQLException ex) {
+                      // Logger.getLogger(EntryForm.class.getName()).log(Level.SEVERE, null, ex);
+                     
+                      return false;
+                  } 
+                  catch (ClassNotFoundException ex) {
+                     //  Logger.getLogger(EntryForm.class.getName()).log(Level.SEVERE, null, ex);
+                      return false;
+                  }
+            
+        }
+        
 
 
 }

@@ -32,7 +32,7 @@
                        
                        else{
                            out.print("<li><a href='#'>"+session.getAttribute("organization_name")+"</a></li>");
-                           out.print("<li><a href='logout.jsp'>Logout</a></li>");
+                           out.print("<li><a href='../logout.jsp'>Logout</a></li>");
                            
                        }
                       %>         
