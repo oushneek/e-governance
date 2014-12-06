@@ -92,7 +92,7 @@ criminalSearchResult = criminal.searchCriminalInfo(national_id);
                 out.print("<td>"+criminalSearchResult.get(i)+"</td>");
                 i++;
                 if(criminalSearchResult.get(i).equals(session.getAttribute("organization_id"))){    
-                    out.print("<td><button class='btn btn-primary btn-sm'>Edit</button></td>");
+                    out.print("<td><a href='../edit/criminal_edit.jsp?national_id="+national_id+"&criminal_id="+criminal_id+"'><button class='btn btn-primary btn-sm'>Edit</button></a></td>");
                     out.print("<td><a href='../delete/criminal_delete.jsp?national_id="+national_id+"&criminal_id="+criminal_id+"'><button class='btn btn-danger btn-sm'>Delete</button></a></td>");
                 }
                 else{

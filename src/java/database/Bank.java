@@ -120,4 +120,36 @@ public class Bank {
             
         }
 
+    public String editBankInfo(String banking_id,String national_id){
+                Connection conn = null;
+                Statement stmt = null;
+                 try{
+                    //STEP 2: Register JDBC driver
+                    Class.forName(Connect.JDBC_DRIVER);
+                    //STEP 3: Open a connection
+                    conn = DriverManager.getConnection(Connect.DB_URL, Connect.USER, Connect.PASS);
+
+                    //STEP 4: Execute a query
+                    stmt = conn.createStatement();
+
+                    String sql="update banking set national_id="+national_id+" where banking_id="+banking_id;
+                    System.out.println(sql);
+                     
+                    stmt.executeUpdate(sql);
+                    return "Done";
+     
+
+                   
+                 } catch (SQLException ex) {
+                      // Logger.getLogger(EntryForm.class.getName()).log(Level.SEVERE, null, ex);
+                     
+                      return "Failed 1";
+                  } 
+                  catch (ClassNotFoundException ex) {
+                     //  Logger.getLogger(EntryForm.class.getName()).log(Level.SEVERE, null, ex);
+                      return "Failed 2";
+                  }
+        }
+    
+    
 }
