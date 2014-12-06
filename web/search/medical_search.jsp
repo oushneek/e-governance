@@ -84,6 +84,7 @@ medicalSearchResult = medical.searchMedicalInfo(national_id);
                 out.print("<td>"+medicalSearchResult.get(i)+"</td>");
                 i++;
                 out.print("<td>"+medicalSearchResult.get(i)+"</td>");
+                String medical_id=medicalSearchResult.get(i);
                 i++;
                 out.print("<td>"+medicalSearchResult.get(i)+"</td>");
                 i++;
@@ -93,7 +94,7 @@ medicalSearchResult = medical.searchMedicalInfo(national_id);
                 i++;
                 if(medicalSearchResult.get(i).equals(session.getAttribute("organization_id"))){
                     out.print("<td><button class='btn btn-primary btn-sm'>Edit</button></td>");
-                    out.print("<td><button class='btn btn-danger btn-sm'>Delete</button></td>");
+                    out.print("<td><a href='../delete/medical_delete.jsp?national_id="+national_id+"&medical_id="+medical_id+"'><button class='btn btn-danger btn-sm'>Delete</button></a></td>");
                 }
                 else{
                     out.print("<td><button class='btn btn-primary btn-sm' disabled>Edit</button></td>");

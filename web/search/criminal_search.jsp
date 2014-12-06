@@ -83,6 +83,7 @@ criminalSearchResult = criminal.searchCriminalInfo(national_id);
                 out.print("<td>"+criminalSearchResult.get(i)+"</td>");
                 i++;
                 out.print("<td>"+criminalSearchResult.get(i)+"</td>");
+                String criminal_id=criminalSearchResult.get(i);
                 i++;
                 out.print("<td>"+criminalSearchResult.get(i)+"</td>");
                 i++;
@@ -92,7 +93,7 @@ criminalSearchResult = criminal.searchCriminalInfo(national_id);
                 i++;
                 if(criminalSearchResult.get(i).equals(session.getAttribute("organization_id"))){    
                     out.print("<td><button class='btn btn-primary btn-sm'>Edit</button></td>");
-                    out.print("<td><button class='btn btn-danger btn-sm'>Delete</button></td>");
+                    out.print("<td><a href='../delete/criminal_delete.jsp?national_id="+national_id+"&criminal_id="+criminal_id+"'><button class='btn btn-danger btn-sm'>Delete</button></a></td>");
                 }
                 else{
                     out.print("<td><button class='btn btn-primary btn-sm' disabled>Edit</button></td>");
