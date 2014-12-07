@@ -26,7 +26,7 @@
                                
                             %>
                             
-                    <input type="hidden" name="banking_id" id="banking_id" value="<%out.print(criminal_id) ;%>">
+                    <input type="hidden" name="criminal_id" id="criminal_id" value="<%out.print(criminal_id) ;%>">
                             
                     <div class="form-group">
                                 <label for="national_id" class="col-lg-2 control-label">National ID*</label>

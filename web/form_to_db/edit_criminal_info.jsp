@@ -25,8 +25,11 @@
     criminalInfo.add(request.getParameter("national_id"));
     criminalInfo.add(request.getParameter("criminal_id"));
     criminalInfo.add(request.getParameter("date"));
-    criminalInfo.add(request.getParameter("descripttion"));
-
+    criminalInfo.add(request.getParameter("description"));
+    
+    for(int i=0;i<criminalInfo.size();i++){
+        out.println(criminalInfo.get(i));
+    }
     
     
     

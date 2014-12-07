@@ -170,7 +170,7 @@ public class Criminal {
                     //STEP 4: Execute a query
                     stmt = conn.createStatement();
 
-                    String sql="update criminal set national_id="+criminal.get(0)+",date="+criminal.get(2)+",description="+criminal.get(3)+"  where criminal_id="+criminal.get(1);
+                    String sql="update criminal set national_id="+criminal.get(0)+",date='"+criminal.get(2)+"',description='"+criminal.get(3)+"'  where criminal_id="+criminal.get(1);
                     System.out.println(sql);
                      
                     stmt.executeUpdate(sql);
