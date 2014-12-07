@@ -96,7 +96,7 @@ jobSearchResult = job.searchJobInfo(national_id);
                 out.print("<td>"+jobSearchResult.get(i)+"</td>");
                 i++;
                 if(jobSearchResult.get(i).equals(session.getAttribute("organization_id"))){
-                    out.print("<td><button class='btn btn-primary btn-sm'>Edit</button></td>");
+                    out.print("<td><a href='../edit/job_edit.jsp?national_id="+national_id+"&job_id="+job_id+"'<button class='btn btn-primary btn-sm'>Edit</button></a></td>");
                     out.print("<td><a href='../delete/job_delete.jsp?national_id="+national_id+"&job_id="+job_id+"'><button class='btn btn-danger btn-sm'>Delete</button></a></td>");
                 }
                 else{

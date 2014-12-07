@@ -123,5 +123,71 @@ public class Job {
                   }
             
         }
+    public ArrayList<String> getJobInfo(String job_id,String national_id){
+        ArrayList<String> jobInfo = new ArrayList<String>();
+        Connection conn = null;
+        Statement stmt = null;
+         try{
+            //STEP 2: Register JDBC driver
+            Class.forName(Connect.JDBC_DRIVER);
+
+            //STEP 3: Open a connection
+            conn = DriverManager.getConnection(Connect.DB_URL, Connect.USER, Connect.PASS);
+
+            //STEP 4: Execute a query
+            stmt = conn.createStatement();
+
+            String sql = "select * from job where national_id="+national_id+" and job_id="+job_id;
+            ResultSet rs = stmt.executeQuery(sql);
+            //STEP 5: Extract data from result set
+
+            while(rs.next()){
+                  jobInfo.add(rs.getString("joining_date"));
+                  jobInfo.add(rs.getString("leaving_date"));
+                  jobInfo.add(rs.getString("post"));
+            }
+
+            rs.close();
+            }catch(SQLException se){
+               //Handle errors for JDBC
+               se.printStackTrace();
+            }catch(Exception e){
+               //Handle errors for Class.forName
+               e.printStackTrace();
+            }
+            return jobInfo;
+    } 
+    
+        public String editJobInfo(ArrayList<String> job){
+                Connection conn = null;
+                Statement stmt = null;
+                 try{
+                    //STEP 2: Register JDBC driver
+                    Class.forName(Connect.JDBC_DRIVER);
+                    //STEP 3: Open a connection
+                    conn = DriverManager.getConnection(Connect.DB_URL, Connect.USER, Connect.PASS);
+
+                    //STEP 4: Execute a query
+                    stmt = conn.createStatement();
+
+                    String sql="update job set national_id='"+job.get(1)+"',joining_date='"+job.get(2)+"',leaving_date='"+job.get(3)+"',post='"+job.get(4)+"'  where job_id='"+job.get(0)+"'";
+                    System.out.println(sql);
+                     
+                    stmt.executeUpdate(sql);
+                    return "Done";
+     
+
+                   
+                 } catch (SQLException ex) {
+                      // Logger.getLogger(EntryForm.class.getName()).log(Level.SEVERE, null, ex);
+                     
+                      return "Failed 1";
+                  } 
+                  catch (ClassNotFoundException ex) {
+                     //  Logger.getLogger(EntryForm.class.getName()).log(Level.SEVERE, null, ex);
+                      return "Failed 2";
+                  }
+        }
+    
     
 }
