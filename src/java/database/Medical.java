@@ -122,6 +122,69 @@ public class Medical {
                   }
             
         }
-   
+     
+     public ArrayList<String> getMedicalInfo(String medical_id,String national_id){
+        ArrayList<String> medicalInfo = new ArrayList<String>();
+        Connection conn = null;
+        Statement stmt = null;
+         try{
+            //STEP 2: Register JDBC driver
+            Class.forName(Connect.JDBC_DRIVER);
+
+            //STEP 3: Open a connection
+            conn = DriverManager.getConnection(Connect.DB_URL, Connect.USER, Connect.PASS);
+
+            //STEP 4: Execute a query
+            stmt = conn.createStatement();
+
+            String sql = "select * from medical where national_id="+national_id+" and medical_id="+medical_id;
+            ResultSet rs = stmt.executeQuery(sql);
+            //STEP 5: Extract data from result set
+
+            while(rs.next()){
+                  medicalInfo.add(rs.getString("date"));
+                  medicalInfo.add(rs.getString("description"));
+            }
+
+            rs.close();
+            }catch(SQLException se){
+               //Handle errors for JDBC
+               se.printStackTrace();
+            }catch(Exception e){
+               //Handle errors for Class.forName
+               e.printStackTrace();
+            }
+            return medicalInfo;
+    } 
+        public String editMedicalInfo(ArrayList<String> medical){
+                Connection conn = null;
+                Statement stmt = null;
+                 try{
+                    //STEP 2: Register JDBC driver
+                    Class.forName(Connect.JDBC_DRIVER);
+                    //STEP 3: Open a connection
+                    conn = DriverManager.getConnection(Connect.DB_URL, Connect.USER, Connect.PASS);
+
+                    //STEP 4: Execute a query
+                    stmt = conn.createStatement();
+
+                    String sql="update medical set national_id='"+medical.get(1)+"',date='"+medical.get(2)+"',description='"+medical.get(3)+"'  where medical_id='"+medical.get(0)+"'";
+                    System.out.println(sql);
+                     
+                    stmt.executeUpdate(sql);
+                    return "Done";
+     
+
+                   
+                 } catch (SQLException ex) {
+                      // Logger.getLogger(EntryForm.class.getName()).log(Level.SEVERE, null, ex);
+                     
+                      return "Failed 1";
+                  } 
+                  catch (ClassNotFoundException ex) {
+                     //  Logger.getLogger(EntryForm.class.getName()).log(Level.SEVERE, null, ex);
+                      return "Failed 2";
+                  }
+        }
 
 }
