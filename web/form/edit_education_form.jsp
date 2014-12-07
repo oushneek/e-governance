@@ -14,7 +14,7 @@
 
                     <form action="../form_to_db/edit_education_info.jsp" method="post" accept-charset="utf-8" class="form-horizontal">       
                         <fieldset>
-                            <legend>Add Education Information of Citizen</legend>
+                            <legend>Edit Education Information of Citizen</legend>
                             
                             <%
                                 
