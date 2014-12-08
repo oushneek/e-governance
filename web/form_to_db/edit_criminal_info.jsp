@@ -4,6 +4,7 @@
     Author     : Tazbeea Tazakka
 --%>
 
+<%@page import="database.criminal.EditCriminalInfo"%>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import="database.*" %>
@@ -33,8 +34,8 @@
     
     
     
-        Criminal criminal=new Criminal();
-        String result=criminal.editCriminalInfo(criminalInfo);
+        EditCriminalInfo criminal=new EditCriminalInfo();
+        String result=criminal.update(criminalInfo);
         out.print(result);
         
         %>

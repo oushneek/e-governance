@@ -4,6 +4,7 @@
     Author     : Tazbeea Tazakka
 --%>
 
+<%@page import="database.criminal.GetCriminalInfo"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="database.Criminal"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -21,8 +22,8 @@
                     String criminal_id=request.getParameter("criminal_id");
                                 
                     ArrayList<String> criminalInfo=new ArrayList<String>();
-                    Criminal criminal=new Criminal();
-                    criminalInfo=criminal.getCriminalInfo(criminal_id, national_id);
+                    GetCriminalInfo criminal=new GetCriminalInfo();
+                    criminalInfo=criminal.get(criminal_id, national_id);
                                
                 %>
 

@@ -4,6 +4,7 @@
     Author     : Ratul
 --%>
 
+<%@page import="database.criminal.AddCriminalInfo"%>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import="database.*" %>
@@ -28,8 +29,8 @@
         criminal.add(request.getParameter("description"));
    
      
-        Criminal criminalInfo=new Criminal();
-        String result=criminalInfo.insertCriminalInfo(criminal);
+        AddCriminalInfo newCriminal = new AddCriminalInfo();
+        String result=newCriminal.insert(criminal);
     //    out.print(criminal.get(2));
     //    out.print(criminal.get(3));
     //    out.print(result);

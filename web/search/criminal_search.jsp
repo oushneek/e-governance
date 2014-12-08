@@ -4,6 +4,7 @@
     Author     : Ratul
 --%>
 
+<%@page import="database.criminal.SearchCriminalInfo"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="database.*"%>
@@ -12,11 +13,11 @@
 <%
 String national_id = request.getParameter("national_id");
 
-Criminal criminal = new Criminal();
+SearchCriminalInfo criminal = new SearchCriminalInfo();
 
 ArrayList<String> criminalSearchResult = new ArrayList<String>();
 
-criminalSearchResult = criminal.searchCriminalInfo(national_id);
+criminalSearchResult = criminal.search(national_id);
 
 %>
 

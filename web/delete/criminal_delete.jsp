@@ -4,6 +4,7 @@
     Author     : Tazbeea Tazakka
 --%>
 
+<%@page import="database.criminal.DeleteCriminalInfo"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@page import="database.*"%>
@@ -12,7 +13,7 @@ String national_id = request.getParameter("national_id");
 String organization_id = session.getAttribute("organization_id").toString();
 String criminal_id = request.getParameter("criminal_id");
 
-Criminal criminal = new Criminal();
+DeleteCriminalInfo criminal = new DeleteCriminalInfo();
 boolean decision =  criminal.delete(national_id,organization_id,criminal_id);
 
 if(decision){
