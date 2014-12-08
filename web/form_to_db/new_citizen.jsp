@@ -4,6 +4,7 @@
     Author     : Tazbeea Tazakka
 --%>
 
+<%@page import="database.citizen.*"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Calendar"%>
 <%@page import="java.util.ArrayList"%>
@@ -71,8 +72,8 @@
     
         String tempNationalID=birth_year+birth_place;
         String finalid=null;
-        Citizen citizen= new Citizen();
-        int nationalID=citizen.maxNationalID(tempNationalID);
+        MaxNationalID citizenCount= new MaxNationalID();
+        int nationalID=citizenCount.get(tempNationalID);
         if(nationalID==0){
             tempNationalID+="001";
             finalid=tempNationalID;
@@ -84,8 +85,9 @@
         Calendar currentdate=Calendar.getInstance();
         SimpleDateFormat formatter=new SimpleDateFormat("yyyy-MM-dd");
         String dateNow=formatter.format(currentdate.getTime());
-    
-        String result=citizen.insertCitizen(finalid, citizenInfo, dateNow);
+        
+        AddCitizenInfo newCitizen = new AddCitizenInfo();
+        String result=newCitizen.insert(finalid, citizenInfo, dateNow);
         out.print("<div class='alert alert-success' role='alert'>New Citizen added . His / Her National Id is"+finalid+"</div>");
         response.setHeader("Refresh", "2;url=../add_new_citizen.jsp"); 
         //out.print(result);
