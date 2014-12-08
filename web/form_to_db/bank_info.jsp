@@ -9,38 +9,40 @@
 
 <!DOCTYPE html>
 <html lang="en">
-    
+
     <!-- Include Header -->
     <jsp:include page="../include/header.jsp" />
- 
-    <body>
-    <!-- Include Menu -->
-    <jsp:include page="../include/menu.jsp" />       
 
-    <%
-    String organization_id=session.getAttribute("organization_id").toString();
-    String national_id=request.getParameter("national_id");
+    <body>
+        <!-- Include Menu -->
+        <jsp:include page="../include/menu.jsp" />       
+
+        <%
+        String organization_id=session.getAttribute("organization_id").toString();
+        String national_id=request.getParameter("national_id");
     
-    Bank bank=new Bank();
-    String result=bank.insertBankInfo(organization_id,national_id);
-    out.print(result);
+        Bank bank=new Bank();
+        String result=bank.insertBankInfo(organization_id,national_id);
+        //out.print(result);
         
-    %>
-    <div class="row show-grid">
-              <div class="col-lg-8" style="padding-left: 8%;padding-top: 2%;">
-                  <%
-                  %>
-                    
-              </div>
-              <div class="col-lg-4" style="padding-top: 4%;padding-right: 2%;">
-                  
-              </div>
-    </div>
-           
-    
-    <!-- Include Footer -->
-    <jsp:include page="../include/footer.jsp" />     
-  </body>
+        out.print("<div class='alert alert-success' role='alert'>Citizen "+national_id+" has been added to "+session.getAttribute("organization_name")+"</div>");
+        response.setHeader("Refresh", "2;url=../bank.jsp"); 
+        %>
+        <div class="row show-grid">
+            <div class="col-lg-8" style="padding-left: 8%;padding-top: 2%;">
+                <%
+                %>
+
+            </div>
+            <div class="col-lg-4" style="padding-top: 4%;padding-right: 2%;">
+
+            </div>
+        </div>
+
+
+        <!-- Include Footer -->
+        <jsp:include page="../include/footer.jsp" />     
+    </body>
 </html>
 
 

@@ -34,17 +34,17 @@
     %>
     <!-- Include Header -->
     <jsp:include page="include/header.jsp" />
- 
-    <body>
-    <!-- Include Menu -->
-    <jsp:include page="include/menu.jsp" />       
 
-    <!-- Include Login Form -->
-    <jsp:include page="form/admin_login.jsp" />
-           
-    
-    <!-- Include Footer -->
-    <jsp:include page="include/footer.jsp" />     
-  </body>
+    <body>
+        <!-- Include Menu -->
+        <jsp:include page="include/menu.jsp" />       
+
+        <!-- Include Login Form -->
+        <jsp:include page="form/admin_login.jsp" />
+
+
+        <!-- Include Footer -->
+        <jsp:include page="include/footer.jsp" />     
+    </body>
 </html>
 

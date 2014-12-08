@@ -8,19 +8,19 @@
 
 <!DOCTYPE html>
 <html lang="en">
-    
+
     <!-- Include Header -->
     <jsp:include page="header.jsp" />
- 
-    <body>
-    <!-- Include Menu -->
-    <jsp:include page="menu.jsp" />       
 
-    <!-- Include Bank Form -->
-    <jsp:include page="../form/edit_education_form.jsp" />
-           
-    
-    <!-- Include Footer -->
-    <jsp:include page="footer.jsp" />     
-  </body>
+    <body>
+        <!-- Include Menu -->
+        <jsp:include page="menu.jsp" />       
+
+        <!-- Include Bank Form -->
+        <jsp:include page="../form/edit_education_form.jsp" />
+
+
+        <!-- Include Footer -->
+        <jsp:include page="footer.jsp" />     
+    </body>
 </html>
