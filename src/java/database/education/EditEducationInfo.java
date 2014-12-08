@@ -18,7 +18,7 @@ import java.util.ArrayList;
  * @author Tazbeea Tazakka
  */
 public class EditEducationInfo {
-    public String edit(ArrayList<String> education){
+    public boolean edit(ArrayList<String> education){
                 Connection conn = null;
                 Statement stmt = null;
                  try{
@@ -34,18 +34,18 @@ public class EditEducationInfo {
                     System.out.println(sql);
                      
                     stmt.executeUpdate(sql);
-                    return "Done";
+                    return true;
      
 
                    
                  } catch (SQLException ex) {
                       // Logger.getLogger(EntryForm.class.getName()).log(Level.SEVERE, null, ex);
                      
-                      return "Failed 1";
+                      return false;
                   } 
                   catch (ClassNotFoundException ex) {
                      //  Logger.getLogger(EntryForm.class.getName()).log(Level.SEVERE, null, ex);
-                      return "Failed 2";
+                      return false;
                   }
         }
    
