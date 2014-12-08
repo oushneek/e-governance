@@ -3,7 +3,7 @@
     Created on : Dec 7, 2014, 9:51:49 PM
     Author     : Tazbeea Tazakka
 --%>
-
+<%@page import="database.education.EditEducationInfo" %>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import="database.*" %>
@@ -35,8 +35,8 @@
     
     
     
-        Education education=new Education();
-        String result=education.editEducationInfo(educationInfo);
+        EditEducationInfo education=new EditEducationInfo();
+        String result=education.edit(educationInfo);
         out.print(result);
         
         %>

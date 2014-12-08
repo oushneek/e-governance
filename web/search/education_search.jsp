@@ -3,7 +3,7 @@
     Created on : Dec 3, 2014, 4:12:51 AM
     Author     : Ratul
 --%>
-
+<%@page import="database.education.SearchEducationInfo"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="database.*"%>
@@ -12,11 +12,11 @@
 <%
 String national_id = request.getParameter("national_id");
 
-Education education = new Education();
+SearchEducationInfo education = new SearchEducationInfo();
 
 ArrayList<String> educationSearchResult = new ArrayList<String>();
 
-educationSearchResult = education.searchEducationInfo(national_id);
+educationSearchResult = education.search(national_id);
 
 %>
 

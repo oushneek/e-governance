@@ -4,6 +4,7 @@
     Author     : Ratul
 --%>
 
+<%@page import="database.job.GetJobInfo"%>
 <%@page import="database.*"%>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -20,8 +21,8 @@
                     String job_id=request.getParameter("job_id");
                                 
                     ArrayList<String> jobInfo=new ArrayList<String>();
-                    Job job=new Job();
-                    jobInfo=job.getJobInfo(job_id, national_id);
+                    GetJobInfo job=new GetJobInfo();
+                    jobInfo=job.get(job_id, national_id);
                                
                 %>
 

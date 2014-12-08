@@ -3,10 +3,10 @@
     Created on : Dec 3, 2014, 3:18:56 PM
     Author     : Tazbeea Tazakka
 --%>
-
+<%@page import="database.job.AddJobInfo" %>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ page import="database.*" %>
+<%@page import="database.*" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -30,8 +30,8 @@
         job.add(request.getParameter("post"));
    
      
-        Job jobInfo=new Job();
-        String result=jobInfo.insertJobInfo(job);
+        AddJobInfo jobInfo=new AddJobInfo();
+        String result=jobInfo.insert(job);
        // out.print(result);
         
         out.print("<div class='alert alert-success' role='alert'>Citizen " + job.get(0) + " has been added by " + session.getAttribute("organization_name") + "</div>");

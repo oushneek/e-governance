@@ -6,12 +6,12 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<%@page import="database.*"%>
+<%@page import="database.education.DeleteEducationInfo"%>
 <%
 String national_id = request.getParameter("national_id");
 String organization_id = session.getAttribute("organization_id").toString();
 String education_id = request.getParameter("education_id");
-Education education = new Education();
+DeleteEducationInfo education = new DeleteEducationInfo();
 boolean decision =  education.delete(national_id,organization_id,education_id);
 
 if(decision){

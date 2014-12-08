@@ -4,10 +4,10 @@
     Author     : Ratul
 --%>
 
-
+<%@page import="database.medical.EditMedicalInfo" %>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ page import="database.*" %>
+<%@page import="database.*" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,8 +34,8 @@
     
     
     
-        Medical medical=new Medical();
-        String result=medical.editMedicalInfo(medicalInfo);
+        EditMedicalInfo medical=new EditMedicalInfo();
+        String result=medical.edit(medicalInfo);
         out.print(result);
         
         %>

@@ -3,7 +3,7 @@
     Created on : Dec 1, 2014, 10:35:58 PM
     Author     : Tazbeea Tazakka
 --%>
-
+<%@page import="database.education.AddEducationInfo" %>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import="database.*" %>
@@ -30,8 +30,8 @@
             education.add(request.getParameter("board"));
             education.add(request.getParameter("cgpa"));
 
-            Education eduInfo = new Education();
-            String result = eduInfo.insertEducationInfo(education);
+            AddEducationInfo eduInfo = new AddEducationInfo();
+            String result = eduInfo.insert(education);
             //out.print(result);
 
             out.print("<div class='alert alert-success' role='alert'>Citizen " + education.get(0) + " has been added by " + session.getAttribute("organization_name") + "</div>");

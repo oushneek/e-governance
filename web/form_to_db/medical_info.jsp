@@ -4,9 +4,10 @@
     Author     : Tazbeea Tazakka
 --%>
 
+<%@page import="database.medical.AddMedicalInfo" %>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ page import="database.*" %>
+<%@page import="database.*" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,8 +29,8 @@
         medical.add(request.getParameter("description"));
    
      
-        Medical medicalInfo=new Medical();
-        String result=medicalInfo.insertMedicalInfo(medical);
+        AddMedicalInfo medicalInfo=new AddMedicalInfo();
+        String result=medicalInfo.insert(medical);
 //        out.print(medical.get(2));
 //        out.print(medical.get(3));
 //        out.print(result);

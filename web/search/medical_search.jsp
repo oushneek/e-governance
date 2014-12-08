@@ -4,6 +4,7 @@
     Author     : Tazbeea Tazakka
 --%>
 
+<%@page import="database.medical.SearchMedicalInfo"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="database.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -13,11 +14,11 @@
 <%
 String national_id = request.getParameter("national_id");
 
-Medical medical = new Medical();
+SearchMedicalInfo medical = new SearchMedicalInfo();
 
 ArrayList<String> medicalSearchResult = new ArrayList<String>();
 
-medicalSearchResult = medical.searchMedicalInfo(national_id);
+medicalSearchResult = medical.search(national_id);
 
 %>
 

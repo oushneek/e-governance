@@ -3,7 +3,7 @@
     Created on : Dec 6, 2014, 10:40:52 AM
     Author     : Tazbeea Tazakka
 --%>
-
+<%@page import="database.job.DeleteJobInfo"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@page import="database.*"%>
@@ -12,7 +12,7 @@ String national_id = request.getParameter("national_id");
 String organization_id = session.getAttribute("organization_id").toString();
 String job_id = request.getParameter("job_id");
 
-Job job = new Job();
+DeleteJobInfo job = new DeleteJobInfo();
 boolean decision =  job.delete(national_id,organization_id,job_id);
 
 if(decision){

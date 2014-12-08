@@ -4,7 +4,7 @@
     Author     : Tazbeea Tazakka
 --%>
 
-<%@page import="database.*"%>
+<%@page import="database.education.GetEducationInfo"%>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
@@ -22,8 +22,8 @@
                     String education_id = request.getParameter("education_id");
 
                     ArrayList<String> educationInfo = new ArrayList<String>();
-                    Education education = new Education();
-                    educationInfo = education.getEducationInfo(education_id, national_id);
+                    GetEducationInfo education = new GetEducationInfo();
+                    educationInfo = education.get(education_id, national_id);
 
                 %>
 

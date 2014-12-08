@@ -3,10 +3,10 @@
     Created on : Dec 8, 2014, 3:29:00 AM
     Author     : Ratul
 --%>
-
+<%@page import="database.job.EditJobInfo" %>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ page import="database.*" %>
+<%@page import="database.*" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -31,11 +31,9 @@
         for(int i=0;i<jobInfo.size();i++){
             out.println(jobInfo.get(i));
         }
-    
-    
-    
-        Job job=new Job();
-        String result=job.editJobInfo(jobInfo);
+   
+        EditJobInfo job=new EditJobInfo();
+        String result=job.edit(jobInfo);
         out.print(result);
         
         %>

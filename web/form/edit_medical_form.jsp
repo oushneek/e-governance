@@ -4,6 +4,7 @@
     Author     : Ratul
 --%>
 
+<%@page import="database.medical.GetMedicalInfo"%>
 <%@page import="database.*"%>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -21,8 +22,8 @@
                     String medical_id=request.getParameter("medical_id");
                                 
                     ArrayList<String> medicalInfo=new ArrayList<String>();
-                    Medical medical=new Medical();
-                    medicalInfo=medical.getMedicalInfo(medical_id, national_id);
+                    GetMedicalInfo medical=new GetMedicalInfo();
+                    medicalInfo=medical.get(medical_id, national_id);
                                
                 %>
 
