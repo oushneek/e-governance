@@ -4,6 +4,7 @@
     Author     : Ratul
 --%>
 
+<%@page import="database.bank.SearchBankInfo"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="database.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -13,11 +14,11 @@
 <%
 String national_id = request.getParameter("national_id");
 
-Bank bank = new Bank();
+SearchBankInfo bank = new SearchBankInfo();
 
 ArrayList<String> bankSearchResult = new ArrayList<String>();
 
-bankSearchResult = bank.searchBankInfo(national_id);
+bankSearchResult = bank.search(national_id);
 
 %>
 

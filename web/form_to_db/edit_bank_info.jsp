@@ -4,6 +4,7 @@
     Author     : Tazbeea Tazakka
 --%>
 
+<%@page import="database.bank.EditBankInfo"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import="database.*" %>
 
@@ -22,8 +23,8 @@
         String national_id=request.getParameter("national_id");
         String banking_id=request.getParameter("banking_id");
     
-        Bank bank=new Bank();
-        String result=bank.editBankInfo(banking_id,national_id);
+        EditBankInfo bank=new EditBankInfo();
+        String result=bank.update(banking_id,national_id);
         out.print(result);
         
         %>
