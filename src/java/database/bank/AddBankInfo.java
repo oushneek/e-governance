@@ -18,7 +18,7 @@ import java.sql.Statement;
  * @author Tazbeea Tazakka
  */
 public class AddBankInfo {
-    public String insert(String organization_id,String national_id){
+    public boolean insert(String organization_id,String national_id){
                 Connection conn = null;
                 Statement stmt = null;
                  try{
@@ -34,18 +34,18 @@ public class AddBankInfo {
                     System.out.println(sql);
                      
                     stmt.executeUpdate(sql);
-                    return "Done";
+                    return true;
      
 
                    
                  } catch (SQLException ex) {
                       // Logger.getLogger(EntryForm.class.getName()).log(Level.SEVERE, null, ex);
                      
-                      return "Failed 1";
+                      return false;
                   } 
                   catch (ClassNotFoundException ex) {
                      //  Logger.getLogger(EntryForm.class.getName()).log(Level.SEVERE, null, ex);
-                      return "Failed 2";
+                      return false;
                   }
         }
 }

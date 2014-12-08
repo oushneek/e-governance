@@ -10,7 +10,7 @@ import java.sql.Statement;
 
 
 public class EditBankInfo {
-     public String update(String banking_id,String national_id){
+     public boolean update(String banking_id,String national_id){
                 Connection conn = null;
                 Statement stmt = null;
                  try{
@@ -26,18 +26,18 @@ public class EditBankInfo {
                     System.out.println(sql);
                      
                     stmt.executeUpdate(sql);
-                    return "Done";
+                    return true;
      
 
                    
                  } catch (SQLException ex) {
                       // Logger.getLogger(EntryForm.class.getName()).log(Level.SEVERE, null, ex);
                      
-                      return "Failed 1";
+                      return false;
                   } 
                   catch (ClassNotFoundException ex) {
                      //  Logger.getLogger(EntryForm.class.getName()).log(Level.SEVERE, null, ex);
-                      return "Failed 2";
+                      return false;
                   }
         }
 }
