@@ -6,12 +6,19 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<style>
+    #Error,#Done{
+        display:none;
+    }    
+</style>
 <div class="row show-grid">
     <div class="col-lg-8" style="padding-left: 8%;padding-top: 2%;">
 
-        <form action="form_to_db/criminal_info.jsp" method="post" accept-charset="utf-8" class="form-horizontal">       
+        <form id="criminalForm" method="post" accept-charset="utf-8" class="form-horizontal">       
             <fieldset>
                 <legend>Add New Criminal Data</legend>
+                 <div id="Error" class='alert alert-danger' role='alert'>Something Wrong !! Please Check the Data and Try Again</div>
+                <div id="Done" class='alert alert-success' role='alert'>Data has been Successfully Saved</div>
 
                 <div class="form-group">
                     <label for="national_id" class="col-lg-2 control-label">National ID*</label>
@@ -39,7 +46,7 @@
                 <div class="form-group">
                     <div class="col-lg-10 col-lg-offset-2">
 
-                        <button type="submit" class="btn btn-primary">Add</button>
+                        <input type="button" id="addButton" class="btn btn-primary" value="Add">
                     </div>
                 </div>
             </fieldset>
@@ -64,3 +71,44 @@
         </div>
     </div>
 </div>
+
+<script>
+    $(document).ready(function() {
+        $("#addButton").click(function() {
+            $("#Error").slideUp();
+            $("#Done").slideUp();
+
+            if (($("#national_id").val() === "") || ($("#date").val() === "")  || ($("#description").val() === "")) {
+                alert("Please Fill Up Every Field");
+            }
+            else {
+                $("#addButton").val("Adding...");
+                $("#addButton").addClass("disabled");
+                $.ajax({
+                    type: "POST",
+                    url: "form_to_db/criminal_info.jsp",
+                    data: $("#criminalForm").serialize()
+                }).done(function(data) {
+                    if (data != "0") {
+                        $("#Done").slideDown();
+                        $("#Error").slideUp();
+                        $("#addButton").removeClass("disabled");
+                        $("#addButton").val("Add");
+                        $('#criminalForm').trigger("reset");
+                    }
+                    else {
+                        $("#addButton").removeClass("disabled");
+                        $("#addButton").val("Add");
+                        $("#Error").slideDown();
+                    }
+                }).error(function(data) {
+                    console.log(data);
+                    alert("Try Again to Add");
+                    $("#addButton").removeClass("disabled");
+                    $("#addButton").val("Add");
+                    $("#Error").slideDown();
+                });
+            }
+        });
+    });
+</script>

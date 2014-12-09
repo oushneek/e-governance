@@ -6,17 +6,8 @@
 
 <%@page import="database.criminal.AddCriminalInfo"%>
 <%@page import="java.util.ArrayList"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="application/json; charset=UTF-8"%>
 <%@ page import="database.*" %>
-<!DOCTYPE html>
-<html lang="en">
-
-    <!-- Include Header -->
-    <jsp:include page="../include/header.jsp" />
-
-    <body>
-        <!-- Include Menu -->
-        <jsp:include page="../include/menu.jsp" />       
 
         <%
         
@@ -30,29 +21,12 @@
    
      
         AddCriminalInfo newCriminal = new AddCriminalInfo();
-        String result=newCriminal.insert(criminal);
-    //    out.print(criminal.get(2));
-    //    out.print(criminal.get(3));
-    //    out.print(result);
-    //        
-    
-        out.print("<div class='alert alert-success' role='alert'>Citizen "+criminal.get(0)+" has been added by "+session.getAttribute("organization_name")+"</div>");
-        response.setHeader("Refresh", "2;url=../criminal.jsp"); 
+        boolean decision=newCriminal.insert(criminal);
+        
+        if (!decision) {
+        out.print("0");
+    } else {
+        out.print("1");
+    }
         %>
-        <div class="row show-grid">
-            <div class="col-lg-8" style="padding-left: 8%;padding-top: 2%;">
-                <%
-                %>
-
-            </div>
-            <div class="col-lg-4" style="padding-top: 4%;padding-right: 2%;">
-
-            </div>
-        </div>
-
-
-        <!-- Include Footer -->
-        <jsp:include page="../include/footer.jsp" />     
-    </body>
-</html>
-
+  

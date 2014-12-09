@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 
 public class AddCriminalInfo {
-public String insert(ArrayList<String> info){
+public boolean insert(ArrayList<String> info){
                 Connection conn = null;
                 Statement stmt = null;
                  try{
@@ -27,18 +27,18 @@ public String insert(ArrayList<String> info){
                     System.out.println(sql);
                      
                     stmt.executeUpdate(sql);
-                    return "Done";
+                    return true;
      
 
                    
                  } catch (SQLException ex) {
                       // Logger.getLogger(EntryForm.class.getName()).log(Level.SEVERE, null, ex);
                      
-                      return "Failed 1";
+                      return false;
                   } 
                   catch (ClassNotFoundException ex) {
                      //  Logger.getLogger(EntryForm.class.getName()).log(Level.SEVERE, null, ex);
-                      return "Failed 2";
+                      return false;
                   }
         }
 }
