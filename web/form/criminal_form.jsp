@@ -17,7 +17,7 @@
         <form id="criminalForm" method="post" accept-charset="utf-8" class="form-horizontal">       
             <fieldset>
                 <legend>Add New Criminal Data</legend>
-                 <div id="Error" class='alert alert-danger' role='alert'>Something Wrong !! Please Check the Data and Try Again</div>
+                <div id="Error" class='alert alert-danger' role='alert'>Something Wrong !! Please Check the Data and Try Again</div>
                 <div id="Done" class='alert alert-success' role='alert'>Data has been Successfully Saved</div>
 
                 <div class="form-group">
@@ -78,7 +78,7 @@
             $("#Error").slideUp();
             $("#Done").slideUp();
 
-            if (($("#national_id").val() === "") || ($("#date").val() === "")  || ($("#description").val() === "")) {
+            if (($("#national_id").val() === "") || ($("#date").val() === "") || ($("#description").val() === "")) {
                 alert("Please Fill Up Every Field");
             }
             else {

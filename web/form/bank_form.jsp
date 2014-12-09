@@ -17,7 +17,7 @@
         <form id="bankForm" accept-charset="utf-8" class="form-horizontal">       
             <fieldset>
                 <legend>Add New Bank Data</legend>
-                
+
                 <div id="Error" class='alert alert-danger' role='alert'>Something Wrong !! Please Check the Data and Try Again</div>
                 <div id="Done" class='alert alert-success' role='alert'>Data has been Successfully Saved</div>
 

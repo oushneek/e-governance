@@ -142,7 +142,7 @@
                         $("#Error").slideUp();
                         $("#updateButton").removeClass("disabled");
                         $("#updateButton").val("Update");
-                        $('#educationForm').trigger("reset");
+
                     }
                     else {
                         $("#updateButton").removeClass("disabled");

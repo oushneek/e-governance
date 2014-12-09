@@ -11,13 +11,13 @@
 
 <!-- Search Result Handle -->
 <%
-String national_id = request.getParameter("national_id");
+    String national_id = request.getParameter("national_id");
 
-SearchJobInfo job = new SearchJobInfo();
+    SearchJobInfo job = new SearchJobInfo();
 
-ArrayList<String> jobSearchResult = new ArrayList<String>();
+    ArrayList<String> jobSearchResult = new ArrayList<String>();
 
-jobSearchResult = job.search(national_id);
+    jobSearchResult = job.search(national_id);
 
 %>
 
@@ -35,18 +35,16 @@ jobSearchResult = job.search(national_id);
 
     <div class="row show-grid">
         <div class="col-lg-12" style="padding-left: 8%;padding-top: 2%;padding-right:6%">
-            <%
-            if(jobSearchResult.isEmpty()){
-                out.print("<div class='alert alert-danger'>No Record Found with this National ID</a></div>");
-            }
-            else{
-                 out.print("<div class='alert alert-success'>Result Found</a></div>");
-            }
+            <%                if (jobSearchResult.isEmpty()) {
+                    out.print("<div class='alert alert-danger'>No Record Found with this National ID</a></div>");
+                } else {
+                    out.print("<div class='alert alert-success'>Result Found</a></div>");
+                }
             %>
             <div class="panel panel-default">
                 <div class="panel-heading">New Search</div>
                 <div class="panel-body">
-                    <form action="bank_search.jsp" method="GET">
+                    <form action="job_search.jsp" method="GET">
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon">National ID</span>
@@ -77,36 +75,35 @@ jobSearchResult = job.search(national_id);
                 </thead>
                 <tbody>
                     <%
-                      if(jobSearchResult.size()>0){
-                          for(int i=0;i<jobSearchResult.size();i++){
-                          out.print("<tr class='active'>");
-                          out.print("<td>"+jobSearchResult.get(i)+"</td>");
-                          i++;
-                          out.print("<td>"+jobSearchResult.get(i)+"</td>");
-                          i++;
-                          out.print("<td>"+jobSearchResult.get(i)+"</td>");
-                          String job_id=jobSearchResult.get(i);
-                          i++;
-                          out.print("<td>"+jobSearchResult.get(i)+"</td>");
-                          i++;
-                          out.print("<td>"+jobSearchResult.get(i)+"</td>");
-                          i++;
-                          out.print("<td>"+jobSearchResult.get(i)+"</td>");
-                          i++;
-                          out.print("<td>"+jobSearchResult.get(i)+"</td>");
-                          i++;
-                          if(jobSearchResult.get(i).equals(session.getAttribute("organization_id"))){
-                              out.print("<td><a href='../edit/job_edit.jsp?national_id="+national_id+"&job_id="+job_id+"'<button class='btn btn-primary btn-sm'>Edit</button></a></td>");
-                              out.print("<td><a href='../delete/job_delete.jsp?national_id="+national_id+"&job_id="+job_id+"'><button class='btn btn-danger btn-sm'>Delete</button></a></td>");
-                          }
-                          else{
-                              out.print("<td><button class='btn btn-primary btn-sm' disabled>Edit</button></td>");
-                              out.print("<td><button class='btn btn-danger btn-sm' disabled>Delete</button></td>");
-                          }
-                
-                          out.print("</tr>");
-                          }
-                      }
+                        if (jobSearchResult.size() > 0) {
+                            for (int i = 0; i < jobSearchResult.size(); i++) {
+                                out.print("<tr class='active'>");
+                                out.print("<td>" + jobSearchResult.get(i) + "</td>");
+                                i++;
+                                out.print("<td>" + jobSearchResult.get(i) + "</td>");
+                                i++;
+                                out.print("<td>" + jobSearchResult.get(i) + "</td>");
+                                String job_id = jobSearchResult.get(i);
+                                i++;
+                                out.print("<td>" + jobSearchResult.get(i) + "</td>");
+                                i++;
+                                out.print("<td>" + jobSearchResult.get(i) + "</td>");
+                                i++;
+                                out.print("<td>" + jobSearchResult.get(i) + "</td>");
+                                i++;
+                                out.print("<td>" + jobSearchResult.get(i) + "</td>");
+                                i++;
+                                if (jobSearchResult.get(i).equals(session.getAttribute("organization_id"))) {
+                                    out.print("<td><a href='../edit/job_edit.jsp?national_id=" + national_id + "&job_id=" + job_id + "'<button class='btn btn-primary btn-sm'>Edit</button></a></td>");
+                                    out.print("<td><a href='../delete/job_delete.jsp?national_id=" + national_id + "&job_id=" + job_id + "'><button class='btn btn-danger btn-sm'>Delete</button></a></td>");
+                                } else {
+                                    out.print("<td><button class='btn btn-primary btn-sm' disabled>Edit</button></td>");
+                                    out.print("<td><button class='btn btn-danger btn-sm' disabled>Delete</button></td>");
+                                }
+
+                                out.print("</tr>");
+                            }
+                        }
                     %>
 
                 </tbody>

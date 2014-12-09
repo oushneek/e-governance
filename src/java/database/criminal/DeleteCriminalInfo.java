@@ -1,4 +1,3 @@
-
 package database.criminal;
 
 import database.Connect;
@@ -8,41 +7,37 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-
 public class DeleteCriminalInfo {
-    public boolean delete(String national_id,String organization_id,String criminal_id){
-            Connection conn = null;
-            Statement stmt = null;
-                 try{
-                    //STEP 2: Register JDBC driver
-                    Class.forName(ConnectDetails.JDBC_DRIVER);
-                    //STEP 3: Open a connection
-                    conn = DriverManager.getConnection(ConnectDetails.DB_URL, ConnectDetails.USER, ConnectDetails.PASS);
 
-                    //STEP 4: Execute a query
-                    stmt = conn.createStatement();
+    public boolean delete(String national_id, String organization_id, String criminal_id) {
+        Connection conn = null;
+        Statement stmt = null;
+        try {
+            //STEP 2: Register JDBC driver
+            Class.forName(ConnectDetails.JDBC_DRIVER);
+            //STEP 3: Open a connection
+            conn = DriverManager.getConnection(ConnectDetails.DB_URL, ConnectDetails.USER, ConnectDetails.PASS);
 
-                    String sql = "DELETE from criminal where national_id='"+national_id+"' and organization_id='"+organization_id+"' and job_id='"+criminal_id+"'";
-                     
-                    int what =stmt.executeUpdate(sql);
-                    if(what == 1){
-                        return true;
-                    }
-                    else{
-                        return false;
-                    }
-     
+            //STEP 4: Execute a query
+            stmt = conn.createStatement();
 
-                   
-                 } catch (SQLException ex) {
+            String sql = "DELETE from criminal where national_id='" + national_id + "' and organization_id='" + organization_id + "' and job_id='" + criminal_id + "'";
+
+            int what = stmt.executeUpdate(sql);
+            if (what == 1) {
+                return true;
+            } else {
+                return false;
+            }
+
+        } catch (SQLException ex) {
                       // Logger.getLogger(EntryForm.class.getName()).log(Level.SEVERE, null, ex);
-                     
-                      return false;
-                  } 
-                  catch (ClassNotFoundException ex) {
-                     //  Logger.getLogger(EntryForm.class.getName()).log(Level.SEVERE, null, ex);
-                      return false;
-                  }
-            
+
+            return false;
+        } catch (ClassNotFoundException ex) {
+            //  Logger.getLogger(EntryForm.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
         }
+
+    }
 }

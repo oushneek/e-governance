@@ -18,8 +18,6 @@
     criminalInfo.add(request.getParameter("date"));
     criminalInfo.add(request.getParameter("description"));
 
-
-
     EditCriminalInfo criminal = new EditCriminalInfo();
     boolean decision = criminal.update(criminalInfo);
 

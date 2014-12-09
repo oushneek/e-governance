@@ -19,7 +19,7 @@
             <fieldset>
                 <legend>Edit Bank Data</legend>
                 <div id="Error" class='alert alert-danger' role='alert'>Something Wrong !! Please Check the Data and Try Again</div>
-                <div id="Done" class='alert alert-success' role='alert'>Data has been Successfully Saved</div>
+                <div id="Done" class='alert alert-success' role='alert'>Data has been Successfully Updated</div>
 
 
                 <%
@@ -89,7 +89,7 @@
                         $("#Error").slideUp();
                         $("#updateButton").removeClass("disabled");
                         $("#updateButton").val("Update");
-                        $('#bankForm').trigger("reset");
+
                     }
                     else {
                         $("#updateButton").removeClass("disabled");

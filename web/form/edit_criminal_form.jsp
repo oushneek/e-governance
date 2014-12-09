@@ -21,40 +21,40 @@
             <fieldset>
                 <legend>Edit Criminal Data</legend>
                 <div id="Error" class='alert alert-danger' role='alert'>Something Wrong !! Please Check the Data and Try Again</div>
-                <div id="Done" class='alert alert-success' role='alert'>Data has been Successfully Saved</div>
+                <div id="Done" class='alert alert-success' role='alert'>Data has been Successfully Updated</div>
 
 
                 <%
-                                
-                    String national_id=request.getParameter("national_id");
-                    String criminal_id=request.getParameter("criminal_id");
-                                
-                    ArrayList<String> criminalInfo=new ArrayList<String>();
-                    GetCriminalInfo criminal=new GetCriminalInfo();
-                    criminalInfo=criminal.get(criminal_id, national_id);
-                               
+
+                    String national_id = request.getParameter("national_id");
+                    String criminal_id = request.getParameter("criminal_id");
+
+                    ArrayList<String> criminalInfo = new ArrayList<String>();
+                    GetCriminalInfo criminal = new GetCriminalInfo();
+                    criminalInfo = criminal.get(criminal_id, national_id);
+
                 %>
 
-                <input type="hidden" name="criminal_id" id="criminal_id" value="<%out.print(criminal_id) ;%>">
+                <input type="hidden" name="criminal_id" id="criminal_id" value="<%out.print(criminal_id);%>">
 
                 <div class="form-group">
                     <label for="national_id" class="col-lg-2 control-label">National ID*</label>
                     <div class="col-lg-10">
-                        <input type="text" class="form-control" id="national_id" name="national_id"  value="<%out.print(national_id) ;%>">
+                        <input type="text" class="form-control" id="national_id" name="national_id"  value="<%out.print(national_id);%>">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="date" class="col-lg-2 control-label">Date *</label>
                     <div class="col-lg-10">
-                        <input type="date" class="form-control" id="date" name="date"  value="<%out.print(criminalInfo.get(0)) ;%>">
+                        <input type="date" class="form-control" id="date" name="date"  value="<%out.print(criminalInfo.get(0));%>">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="description" class="col-lg-2 control-label">Description*</label>
                     <div class="col-lg-10">
-                        <textarea class="form-control" id="description" name="description" ><%out.print(criminalInfo.get(1)) ;%></textarea>
+                        <textarea class="form-control" id="description" name="description" ><%out.print(criminalInfo.get(1));%></textarea>
                     </div>
                 </div>
 
@@ -88,14 +88,14 @@
         </div>
     </div>
 </div>
-                    
-                    <script>
+
+<script>
     $(document).ready(function() {
         $("#updateButton").click(function() {
             $("#Error").slideUp();
             $("#Done").slideUp();
 
-            if (($("#national_id").val() === "") || ($("#date").val() === "")  || ($("#description").val() === "")) {
+            if (($("#national_id").val() === "") || ($("#date").val() === "") || ($("#description").val() === "")) {
                 alert("Please Fill Up Every Field");
             }
             else {
@@ -111,7 +111,7 @@
                         $("#Error").slideUp();
                         $("#updateButton").removeClass("disabled");
                         $("#updateButton").val("Update");
-                        $('#educationForm').trigger("reset");
+
                     }
                     else {
                         $("#updateButton").removeClass("disabled");

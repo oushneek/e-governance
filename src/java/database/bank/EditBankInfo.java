@@ -1,4 +1,3 @@
-
 package database.bank;
 
 import database.Connect;
@@ -8,36 +7,33 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-
 public class EditBankInfo {
-     public boolean update(String banking_id,String national_id){
-                Connection conn = null;
-                Statement stmt = null;
-                 try{
-                    //STEP 2: Register JDBC driver
-                    Class.forName(ConnectDetails.JDBC_DRIVER);
-                    //STEP 3: Open a connection
-                    conn = DriverManager.getConnection(ConnectDetails.DB_URL, ConnectDetails.USER, ConnectDetails.PASS);
 
-                    //STEP 4: Execute a query
-                    stmt = conn.createStatement();
+    public boolean update(String banking_id, String national_id) {
+        Connection conn = null;
+        Statement stmt = null;
+        try {
+            //STEP 2: Register JDBC driver
+            Class.forName(ConnectDetails.JDBC_DRIVER);
+            //STEP 3: Open a connection
+            conn = DriverManager.getConnection(ConnectDetails.DB_URL, ConnectDetails.USER, ConnectDetails.PASS);
 
-                    String sql="update banking set national_id="+national_id+" where banking_id="+banking_id;
-                    System.out.println(sql);
-                     
-                    stmt.executeUpdate(sql);
-                    return true;
-     
+            //STEP 4: Execute a query
+            stmt = conn.createStatement();
 
-                   
-                 } catch (SQLException ex) {
+            String sql = "update banking set national_id=" + national_id + " where banking_id=" + banking_id;
+            System.out.println(sql);
+
+            stmt.executeUpdate(sql);
+            return true;
+
+        } catch (SQLException ex) {
                       // Logger.getLogger(EntryForm.class.getName()).log(Level.SEVERE, null, ex);
-                     
-                      return false;
-                  } 
-                  catch (ClassNotFoundException ex) {
-                     //  Logger.getLogger(EntryForm.class.getName()).log(Level.SEVERE, null, ex);
-                      return false;
-                  }
+
+            return false;
+        } catch (ClassNotFoundException ex) {
+            //  Logger.getLogger(EntryForm.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
         }
+    }
 }

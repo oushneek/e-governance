@@ -16,7 +16,6 @@
 
     EditBankInfo bank = new EditBankInfo();
     boolean decision = bank.update(banking_id, national_id);
- 
 
     if (!decision) {
         out.print("0");

@@ -1,4 +1,3 @@
-
 package database.bank;
 
 import database.Connect;
@@ -15,11 +14,12 @@ import java.util.ArrayList;
  * @author Ratul
  */
 public class SearchBankInfo {
-    public ArrayList<String> search(String national_id){
+
+    public ArrayList<String> search(String national_id) {
         ArrayList<String> bankInfo = new ArrayList<String>();
         Connection conn = null;
         Statement stmt = null;
-         try{
+        try {
             //STEP 2: Register JDBC driver
             Class.forName(ConnectDetails.JDBC_DRIVER);
 
@@ -29,28 +29,26 @@ public class SearchBankInfo {
             //STEP 4: Execute a query
             stmt = conn.createStatement();
 
-            String sql = "SELECT national_id,name_en,organization_name,banking_id,organization_id FROM banking natural join citizen natural join organization where national_id='"+national_id+"'";
+            String sql = "SELECT national_id,name_en,organization_name,banking_id,organization_id FROM banking natural join citizen natural join organization where national_id='" + national_id + "'";
             ResultSet rs = stmt.executeQuery(sql);
             //STEP 5: Extract data from result set
 
-            while(rs.next()){
-                  bankInfo.add(rs.getString("national_id"));
-                  bankInfo.add(rs.getString("name_en"));
-                  bankInfo.add(rs.getString("banking_id"));
-                  bankInfo.add(rs.getString("organization_name"));
-                  bankInfo.add(rs.getString("organization_id"));
+            while (rs.next()) {
+                bankInfo.add(rs.getString("national_id"));
+                bankInfo.add(rs.getString("name_en"));
+                bankInfo.add(rs.getString("banking_id"));
+                bankInfo.add(rs.getString("organization_name"));
+                bankInfo.add(rs.getString("organization_id"));
             }
-
-
 
             rs.close();
-            }catch(SQLException se){
-               //Handle errors for JDBC
-               se.printStackTrace();
-            }catch(Exception e){
-               //Handle errors for Class.forName
-               e.printStackTrace();
-            }
-            return bankInfo;
+        } catch (SQLException se) {
+            //Handle errors for JDBC
+            se.printStackTrace();
+        } catch (Exception e) {
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        }
+        return bankInfo;
     }
 }
