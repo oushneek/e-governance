@@ -64,7 +64,7 @@
                         <th>National ID</th>
                         <th>Citizen Name</th>
                         <th>Job ID</th>
-                        <th>Organization Name</th>
+                        <th>Job Provider Name</th>
                         <th>Joining Date</th>
                         <th>Leaving Date</th>
                         <th>Post</th>
