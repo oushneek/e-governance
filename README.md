@@ -59,3 +59,5 @@ Education | a@a.com | a
 @oushneek [Tazbeea Tazakka Oushneek]
 Department of Computer Science and Engineering
 Shahjalal University of Science and Technology,Sylhet
+
+GitHub supports many extras in Markdown that help you reference and link to people. If you ever want to direct a comment at someone, you can prefix their name with an @ symbol: Hey @kneath — love your sweater!
