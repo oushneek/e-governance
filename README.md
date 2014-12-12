@@ -55,8 +55,9 @@ Education | a@a.com | a
 
 
 ## Development Credit
-* Md Abu Shahriar Ratul
-* Tazbeea Tazakka Oushneek
+*SUST_Nirontor
+  * Md Abu Shahriar Ratul
+  * Tazbeea Tazakka Oushneek
 
 _Department of Computer Science and Engineering,Shahjalal University of Science and Technology,Sylhet_
 
