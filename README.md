@@ -23,6 +23,7 @@ To Deploy this project you need the following environment on your computer
 Create a Database named `e_governance` on your MySQL
 
 After creating the Database import the below SQL File to create and seed the tables
+
 [Download Database SQL File](https://github.com/ratulcse10/e-governance/blob/master/e_governance.sql)
 
 ### Step 4 (Setup Database Username and Password)
@@ -38,3 +39,16 @@ public static final String DB_URL = "jdbc:mysql://localhost/e_governance";
 public static final String USER = "root";
 public static final String PASS = "";
 ```
+
+### Step 5 (Start Servers)
+Start `Apache Tomcat` and `MySQL`
+
+### Step 6 (Import project)
+Import the Project in Netbeans and Click Run
+
+
+## Sample Demo Login Details
+Type | Email | Password
+------------ | ------------- | -------------
+Govt | gov@gov.bd | gov
+Education | a@a.com | a
