@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class AddCitizenInfo {
 
-    public String insert(String nationalID, ArrayList<String> citizenInfo, String create_date) {
+    public boolean insert(String nationalID, ArrayList<String> citizenInfo, String create_date) {
         Connection conn = null;
         Statement stmt = null;
         try {
@@ -26,15 +26,15 @@ public class AddCitizenInfo {
             System.out.println(sql);
 
             stmt.executeUpdate(sql);
-            return "Done";
+            return true;
 
         } catch (SQLException ex) {
                       // Logger.getLogger(EntryForm.class.getName()).log(Level.SEVERE, null, ex);
 
-            return "Failed 1";
+            return false;
         } catch (ClassNotFoundException ex) {
             //  Logger.getLogger(EntryForm.class.getName()).log(Level.SEVERE, null, ex);
-            return "Failed 2";
+            return false;
         }
     }
 }

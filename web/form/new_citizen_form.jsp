@@ -6,19 +6,19 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<style>
+    #Error,#Done{
+        display:none;
+    }    
+</style>
 <div class="row show-grid">
     <div class="col-lg-8" style="padding-left: 8%;padding-top: 2%;">
 
-        <form action="form_to_db/new_citizen.jsp" method="post" accept-charset="utf-8" class="form-horizontal">       
+        <form id="citizenForm"  accept-charset="utf-8" class="form-horizontal">       
             <fieldset>
                 <legend>Add new Citizen</legend>
-
-                <!--   <div class="form-group">
-                               <label for="name_en" class="col-lg-3 control-label">National ID NO* :</label>
-                     <div class="col-lg-9">
-                       <input type="text" class="form-control" id="name_en" name="name_en"  value="" placeholder="kivabe korte hobe jani na">
-                     </div>
-                   </div>-->
+                <div id="Error" class='alert alert-danger' role='alert'>Something Wrong !! Please Check the Data and Try Again</div>
+                <div id="Done" class='alert alert-success' role='alert'>Data has been Successfully Saved</div>
 
                 <div class="form-group">
                     <label for="name_en" class="col-lg-3 control-label">Name(English)* :</label>
@@ -28,7 +28,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="name_bn" class="col-lg-3 control-label">Name(Bangla)* :</label>
+                    <label for="name_bn" class="col-lg-3 control-label">Name(বাংলা)* :</label>
                     <div class="col-lg-9">
                         <input type="text" class="form-control" id="name_bn" name="name_bn"  value="" placeholder="Type citizen's name in Bangla">
                     </div>
@@ -36,14 +36,14 @@
 
 
                 <div class="form-group">
-                    <label for="father" class="col-lg-3 control-label">Father's Name :</label>
+                    <label for="father" class="col-lg-3 control-label">Father's Name* :</label>
                     <div class="col-lg-9">
                         <input type="text" class="form-control" id="father" name="father"  value="" placeholder="Type citizen's father's name in ENGLISH">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="mother" class="col-lg-3 control-label">Mother's Name :</label>
+                    <label for="mother" class="col-lg-3 control-label">Mother's Name* :</label>
                     <div class="col-lg-9">
                         <input type="text" class="form-control" id="mother" name="mother"  value="" placeholder="Type citizen's mother's name in ENGLISH">
                     </div>
@@ -73,7 +73,6 @@
                             <option value="Tangail">Tangail</option>
                             <option value="Kurigram">Kurigram</option>
                         </select>
-                        <!--<input type="text" class="form-control" id="name_en" name="name_en"  value="" placeholder="Type citizens name in ENGLISH">-->
                     </div>
                 </div>
 
@@ -81,15 +80,32 @@
                 <div class="form-group">
                     <label for="blood_group" class="col-lg-3 control-label">Blood Group* :</label>
                     <div class="col-lg-9">
-                        <input type="text" class="form-control" id="blood_group" name="blood_group"  value="" placeholder="Type citizen's Blood Group in ENGLISH">
+                        <select class="form-control" id="blood_group" name="blood_group">
+                            <option value="">Select</option>
+                            <option value="A+">A+</option>
+                            <option value="B+">B+</option>
+                            <option value="AB+">AB+</option>
+                            <option value="O+">O+</option>
+                            <option value="A-">A-</option>
+                            <option value="B-">B-</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O-">O-</option>
+                        </select>
                     </div>
                 </div>
 
 
                 <div class="form-group">
-                    <label for="religion" class="col-lg-3 control-label">Religion :</label>
+                    <label for="religion" class="col-lg-3 control-label">Religion* :</label>
                     <div class="col-lg-9">
-                        <input type="text" class="form-control" id="religion" name="religion" value="" placeholder="Type citizen's Religion in ENGLISH">
+                        <select class="form-control" id="religion" name="religion">
+                            <option value="">Select</option>
+                            <option value="Islam">Islam</option>
+                            <option value="Hindu">Hindu</option>
+                            <option value="Cristian">Cristian</option>
+                            <option value="Boudha">Boudha</option>
+                            <option value="Others">Others</option>
+                        </select>
                     </div>
                 </div>
 
@@ -97,17 +113,15 @@
                     <label for="present_address" class="col-lg-3 control-label">Present Address* :</label>
                     <div class="col-lg-9">
                         <textarea class="form-control" rows="3" id="present_address" name="present_address"  placeholder="Type citizen's Present Address in ENGLISH"></textarea>
-                        <!--  <input type="text" class="form-control" id="present_address" name="present_address" value="" placeholder="Type citizen's Present Address in ENGLISH">-->
                     </div>
                 </div>
 
 
 
                 <div class="form-group">
-                    <label for="permanent_address" class="col-lg-3 control-label">Permanent Address :</label>
+                    <label for="permanent_address" class="col-lg-3 control-label">Permanent Address* :</label>
                     <div class="col-lg-9">
                         <textarea class="form-control" rows="3" id="permanent_address" name="permanent_address"  placeholder="Type citizen's Permanent Address in ENGLISH"></textarea>
-                        <!--     <input type="text" class="form-control" id="permanent_address" name="permanent_address" value="" placeholder="Type citizen's Permanent Address in ENGLISH">-->
                     </div>
                 </div>
 
@@ -116,8 +130,7 @@
                 <div class="form-group">
                     <label class="col-lg-3"></label>
                     <div class="col-lg-9">
-
-                        <button type="submit" class="btn btn-primary">Add</button>
+                        <input type="button" id="addButton" class="btn btn-primary btn-medium" value="Add">
                     </div>
                 </div>
             </fieldset>
@@ -142,3 +155,45 @@
         </div>
     </div>
 </div>
+
+
+<script>
+    $(document).ready(function() {
+        $("#addButton").click(function() {
+            $("#Error").slideUp();
+            $("#Done").slideUp();
+
+            if (($("#name_en").val() === "") || ($("#name_bn").val() === "") || ($("#father").val() === "") || ($("#mother").val() === "") || ($("#date_of_birth").val() === "") || ($("#birth_place").val() === "") || ($("#blood_group").val() === "") || ($("#religion").val() === "") || ($("#present_address").val() === "") || ($("#permanent_address").val() === "")) {
+                alert("Please Fill Up Every Field");
+            }
+            else {
+                $("#addButton").val("Adding...");
+                $("#addButton").addClass("disabled");
+                $.ajax({
+                    type: "POST",
+                    url: "form_to_db/new_citizen.jsp",
+                    data: $("#citizenForm").serialize()
+                }).done(function(data) {
+                    if (data != "0") {
+                        $("#Done").slideDown();
+                        $("#Error").slideUp();
+                        $("#addButton").removeClass("disabled");
+                        $("#addButton").val("Add");
+                        $('#citizenForm').trigger("reset");
+                    }
+                    else {
+                        $("#addButton").removeClass("disabled");
+                        $("#addButton").val("Add");
+                        $("#Error").slideDown();
+                    }
+                }).error(function(data) {
+                    console.log(data);
+                    alert("Try Again to Add");
+                    $("#addButton").removeClass("disabled");
+                    $("#addButton").val("Add");
+                    $("#Error").slideDown();
+                });
+            }
+        });
+    });
+</script>
