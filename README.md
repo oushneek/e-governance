@@ -1,5 +1,5 @@
 # e-governance
-Project for Therap Java Fest-2014
+> Project for Therap Java Fest-2014
 
 ## Project Proposal and User Guidelines
 1. [Download Project Proposal](https://github.com/ratulcse10/e-governance/blob/master/E_Governance.pdf)
@@ -54,5 +54,8 @@ Govt | gov@gov.bd | gov
 Education | a@a.com | a
 
 
-## Credit
-@ratulcse 
+## Development Credit
+@ratulcse10 [Md Abu Shahriar Ratul]
+@oushneek [Tazbeea Tazakka Oushneek]
+Department of Computer Science and Engineering
+Shahjalal University of Science and Technology,Sylhet
