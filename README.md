@@ -20,10 +20,9 @@ To Deploy this project you need the following environment on your computer
 5. MySQL Connector (JDBC) [version: 5.1.23] 
 
 ### Step 3 (Setup Database)
-Create a Database named "e_governance" on your MySQL
+Create a Database named `e_governance` on your MySQL
 
 After creating the Database import the below SQL File to create and seed the tables
-
 [Download Database SQL File](https://github.com/ratulcse10/e-governance/blob/master/e_governance.sql)
 
 ### Step 4 (Setup Database Username and Password)
