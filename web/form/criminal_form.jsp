@@ -69,10 +69,8 @@
                 </form>
             </div>
         </div>
-    </div>
-        <div class="col-lg-4" style="padding-top: 4%;padding-right: 2%;">
         <div class="panel panel-default">
-            <div class="panel-heading">SEARCH ALL CATEGORY INFORMATION</div>
+            <div class="panel-heading">Search All Category Information (Based on your Privilege )</div>
             <div class="panel-body">
                 <form action="search/detailed_search.jsp" method="GET">
                     <div class="form-group">
@@ -88,6 +86,7 @@
             </div>
         </div>
     </div>
+
 </div>
 
 <script>

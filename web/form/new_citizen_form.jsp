@@ -114,7 +114,8 @@
 
 
                 <div class="form-group">
-                    <div class="col-lg-10 col-lg-offset-2">
+                    <label class="col-lg-3"></label>
+                    <div class="col-lg-9">
 
                         <button type="submit" class="btn btn-primary">Add</button>
                     </div>
@@ -122,15 +123,21 @@
             </fieldset>
         </form>
     </div>
-    <div class="col-lg-4" style="padding-top: 4%;padding-right: 2%;">
+        <div class="col-lg-4" style="padding-top: 4%;padding-right: 2%;">
         <div class="panel panel-default">
-            <div class="panel-heading">Note</div>
+            <div class="panel-heading">Search All Category Information</div>
             <div class="panel-body">
-                <div >
-                    <div >
-                        <span >*****</span>
+                <form action="search/detailed_search.jsp" method="GET">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">National ID</span>
+                            <input type="text" class="form-control" name="national_id" id="national_id" required="">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="submit">Search</button>
+                            </span>
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>

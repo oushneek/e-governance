@@ -94,7 +94,8 @@
 
 
                 <div class="form-group">
-                    <div class="col-lg-10 col-lg-offset-2">
+                    <label for="cgpa" class="col-lg-3 control-label"></label>
+                    <div class="col-lg-9">
 
                         <input type="button" id="updateButton" class="btn btn-primary" value="Update">
                     </div>
@@ -104,8 +105,8 @@
     </div>
     <div class="col-lg-4" style="padding-top: 4%;padding-right: 2%;">
         <div class="panel panel-default">
-            <div class="panel-heading">Note</div>
-            <form action="search/education_search.jsp" method="GET">
+            <div class="panel-heading">New Search</div>
+            <form action="../search/education_search.jsp" method="GET">
                 <div class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon">National ID</span>
@@ -118,24 +119,7 @@
             </form>
         </div>
     </div>
-    <div class="col-lg-4" style="padding-top: 4%;padding-right: 2%;">
-        <div class="panel panel-default">
-            <div class="panel-heading">SEARCH ALL CATEGORY INFORMATION</div>
-            <div class="panel-body">
-                <form action="search/detailed_search.jsp" method="GET">
-                    <div class="form-group">
-                        <div class="input-group">
-                            <span class="input-group-addon">National ID</span>
-                            <input type="text" class="form-control" name="national_id" id="national_id" required="">
-                            <span class="input-group-btn">
-                                <button class="btn btn-default" type="submit">Search</button>
-                            </span>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+   
 </div>
 
 <script>

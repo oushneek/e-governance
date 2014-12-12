@@ -73,7 +73,23 @@
         <div class="panel panel-default">
             <div class="panel-heading">Search</div>
             <div class="panel-body">
-                <form action="search/criminal_search.jsp" method="GET">
+                <form action="../search/criminal_search.jsp" method="GET">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">National ID</span>
+                            <input type="text" class="form-control" name="national_id" id="national_id" required="">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="submit">Search</button>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">Search All Category Information (Based on your Privilege )</div>
+            <div class="panel-body">
+                <form action="../search/detailed_search.jsp" method="GET">
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon">National ID</span>
@@ -87,24 +103,7 @@
             </div>
         </div>
     </div>
-     <div class="col-lg-4" style="padding-top: 4%;padding-right: 2%;">
-        <div class="panel panel-default">
-            <div class="panel-heading">SEARCH ALL CATEGORY INFORMATION</div>
-            <div class="panel-body">
-                <form action="search/detailed_search.jsp" method="GET">
-                    <div class="form-group">
-                        <div class="input-group">
-                            <span class="input-group-addon">National ID</span>
-                            <input type="text" class="form-control" name="national_id" id="national_id" required="">
-                            <span class="input-group-btn">
-                                <button class="btn btn-default" type="submit">Search</button>
-                            </span>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>               
+               
 </div>
 
 <script>

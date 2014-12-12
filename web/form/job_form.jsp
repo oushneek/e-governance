@@ -56,7 +56,8 @@
 
 
                 <div class="form-group">
-                    <div class="col-lg-10 col-lg-offset-2">
+                    <label for="post" class="col-lg-3 control-label"></label>
+                    <div class="col-lg-9">
 
                         <input type="button" id="addButton" class="btn btn-primary" value="Add">
                     </div>
@@ -81,10 +82,8 @@
                 </form>
             </div>
         </div>
-    </div>
-    <div class="col-lg-4" style="padding-top: 4%;padding-right: 2%;">
         <div class="panel panel-default">
-            <div class="panel-heading">SEARCH ALL CATEGORY INFORMATION</div>
+            <div class="panel-heading">Search All Category Information (Based on your Privilege )</div>
             <div class="panel-body">
                 <form action="search/detailed_search.jsp" method="GET">
                     <div class="form-group">
@@ -100,6 +99,7 @@
             </div>
         </div>
     </div>
+
 </div>
 
 <script>

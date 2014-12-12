@@ -52,7 +52,7 @@
         <div class="panel panel-default">
             <div class="panel-heading">Search</div>
             <div class="panel-body">
-                <form action="search/bank_search.jsp" method="GET">
+                <form action="../search/bank_search.jsp" method="GET">
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon">National ID</span>

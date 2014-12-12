@@ -75,7 +75,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">New Search</div>
                 <div class="panel-body">
-                    <form action="education_search.jsp" method="GET">
+                    <form action="detailed_search.jsp" method="GET">
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon">National ID</span>
@@ -88,6 +88,12 @@
                     </form>
                 </div>
             </div>
+            <%  if ((educationInfo.isEmpty()) && (bankInfo.isEmpty()) && (criminalInfo.isEmpty()) && (medicalInfo.isEmpty()) && (jobInfo.isEmpty())) {
+
+                } else {
+                    out.print("<h3 align=center><b>Details Search Result for National ID: "+national_id+"</b></h3>");
+                }
+            %>
             <%
                 //Education Info
                 if (educationInfo.size() > 0) {
@@ -163,7 +169,7 @@
 
                     out.println("</tbody></table>");
                 }
-                
+
                 //Criminal Info
                 if (criminalInfo.size() > 0) {
                     out.println("<legend>Criminal Information</legend>");
@@ -200,7 +206,7 @@
 
                     out.println("</tbody></table>");
                 }
-                
+
                 //Medical Info
                 if (medicalInfo.size() > 0) {
                     out.println("<legend>Medical Information</legend>");
@@ -237,7 +243,7 @@
 
                     out.println("</tbody></table>");
                 }
-                
+
                 //Job Info
                 if (jobInfo.size() > 0) {
                     out.println("<legend>Job Information</legend>");

@@ -12,7 +12,8 @@
     }    
 </style>
 <div class="row show-grid">
-    <div class="col-lg-8" style="padding-left: 8%;padding-top: 2%;">
+    
+    <div class="col-lg-8" style="padding-left: 10%;padding-top: 2%;">
 
         <form id="loginForm"  accept-charset="utf-8" class="form-horizontal">       
             <fieldset>
@@ -46,22 +47,7 @@
             </fieldset>
         </form>
     </div>
-    <div class="col-lg-4" style="padding-top: 4%;padding-right: 2%;">
-        <div class="panel panel-default">
-            <div class="panel-heading">Forget Password</div>
-            <div class="panel-body">
-                <div class="form-group">
-                    <div class="input-group">
-                        <span class="input-group-addon">Email</span>
-                        <input type="text" class="form-control">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">Button</button>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
 </div>
 
 
