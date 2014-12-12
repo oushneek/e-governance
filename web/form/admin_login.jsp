@@ -12,7 +12,7 @@
     }    
 </style>
 <div class="row show-grid">
-    
+
     <div class="col-lg-8" style="padding-left: 10%;padding-top: 2%;">
 
         <form id="loginForm"  accept-charset="utf-8" class="form-horizontal">       

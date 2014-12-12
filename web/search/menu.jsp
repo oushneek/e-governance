@@ -24,15 +24,12 @@
 
             <ul class="nav navbar-nav navbar-right">
                 <%
-                 if(session.getAttribute("organization_id") == null)
-                 {
-                 }
-                       
-                 else{
-                     out.print("<li><a href='../index.jsp'>"+session.getAttribute("organization_name")+"</a></li>");
-                     out.print("<li><a href='../logout.jsp'>Logout</a></li>");
-                           
-                 }
+                    if (session.getAttribute("organization_id") == null) {
+                    } else {
+                        out.print("<li><a href='../index.jsp'>" + session.getAttribute("organization_name") + "</a></li>");
+                        out.print("<li><a href='../logout.jsp'>Logout</a></li>");
+
+                    }
                 %>       
             </ul>
 

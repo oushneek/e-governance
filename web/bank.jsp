@@ -8,6 +8,12 @@
 
 <!DOCTYPE html>
 <html lang="en">
+    <%
+        //Secure the Page from UnAuthorised Access
+        if (session.getAttribute("organization_id") == null) {
+            response.setHeader("Refresh", "0;url=index.jsp");
+        }
+    %>
 
     <!-- Include Header -->
     <jsp:include page="include/header.jsp" />

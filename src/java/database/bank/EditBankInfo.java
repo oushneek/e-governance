@@ -28,7 +28,7 @@ public class EditBankInfo {
             return true;
 
         } catch (SQLException ex) {
-                      // Logger.getLogger(EntryForm.class.getName()).log(Level.SEVERE, null, ex);
+            // Logger.getLogger(EntryForm.class.getName()).log(Level.SEVERE, null, ex);
 
             return false;
         } catch (ClassNotFoundException ex) {

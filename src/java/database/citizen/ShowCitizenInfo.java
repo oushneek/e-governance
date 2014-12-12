@@ -29,7 +29,7 @@ public class ShowCitizenInfo {
 
             String sql = "SELECT * FROM citizen";
             ResultSet rs = stmt.executeQuery(sql);
-                    //STEP 5: Extract data from result set
+            //STEP 5: Extract data from result set
             //String email_C = null;
             while (rs.next()) {
                 //Retrieve by column name

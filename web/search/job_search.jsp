@@ -8,6 +8,12 @@
 <%@page import="database.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%
+    //Secure the Page from UnAuthorised Access
+    if (session.getAttribute("organization_id") == null) {
+        response.setHeader("Refresh", "0;url=../index.jsp");
+    }
+%>
 
 <!-- Search Result Handle -->
 <%

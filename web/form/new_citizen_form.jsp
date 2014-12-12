@@ -136,7 +136,7 @@
             </fieldset>
         </form>
     </div>
-        <div class="col-lg-4" style="padding-top: 4%;padding-right: 2%;">
+    <div class="col-lg-4" style="padding-top: 4%;padding-right: 2%;">
         <div class="panel panel-default">
             <div class="panel-heading">Search All Category Information</div>
             <div class="panel-body">

@@ -13,6 +13,12 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="database.*"%>
 <!DOCTYPE html>
+<%
+    //Secure the Page from UnAuthorised Access
+    if (session.getAttribute("organization_id") == null) {
+        response.setHeader("Refresh", "0;url=../index.jsp");
+    }
+%>
 <!-- Search Result Handle -->
 <%
     String national_id = request.getParameter("national_id");
@@ -91,7 +97,7 @@
             <%  if ((educationInfo.isEmpty()) && (bankInfo.isEmpty()) && (criminalInfo.isEmpty()) && (medicalInfo.isEmpty()) && (jobInfo.isEmpty())) {
 
                 } else {
-                    out.print("<h3 align=center><b>Details Search Result for National ID: "+national_id+"</b></h3>");
+                    out.print("<h3 align=center><b>Details Search Result for National ID: " + national_id + "</b></h3>");
                 }
             %>
             <%

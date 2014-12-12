@@ -9,16 +9,22 @@
 <%@page import="database.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%
+    //Secure the Page from UnAuthorised Access
+    if (session.getAttribute("organization_id") == null) {
+        response.setHeader("Refresh", "0;url=../index.jsp");
+    }
+%>
 
 <!-- Search Result Handle -->
 <%
-String national_id = request.getParameter("national_id");
+    String national_id = request.getParameter("national_id");
 
-SearchMedicalInfo medical = new SearchMedicalInfo();
+    SearchMedicalInfo medical = new SearchMedicalInfo();
 
-ArrayList<String> medicalSearchResult = new ArrayList<String>();
+    ArrayList<String> medicalSearchResult = new ArrayList<String>();
 
-medicalSearchResult = medical.search(national_id);
+    medicalSearchResult = medical.search(national_id);
 
 %>
 
@@ -36,13 +42,11 @@ medicalSearchResult = medical.search(national_id);
 
     <div class="row show-grid">
         <div class="col-lg-12" style="padding-left: 8%;padding-top: 2%;padding-right:6%">
-            <%
-            if(medicalSearchResult.isEmpty()){
-                out.print("<div class='alert alert-danger'>No Record Found with this National ID</a></div>");
-            }
-            else{
-                 out.print("<div class='alert alert-success'>Result Found</a></div>");
-            }
+            <%                if (medicalSearchResult.isEmpty()) {
+                    out.print("<div class='alert alert-danger'>No Record Found with this National ID</a></div>");
+                } else {
+                    out.print("<div class='alert alert-success'>Result Found</a></div>");
+                }
             %>
             <div class="panel panel-default">
                 <div class="panel-heading">New Search</div>
@@ -77,34 +81,33 @@ medicalSearchResult = medical.search(national_id);
                 </thead>
                 <tbody>
                     <%
-                      if(medicalSearchResult.size()>0){
-                          for(int i=0;i<medicalSearchResult.size();i++){
-                          out.print("<tr class='active'>");
-                          out.print("<td>"+medicalSearchResult.get(i)+"</td>");
-                          i++;
-                          out.print("<td>"+medicalSearchResult.get(i)+"</td>");
-                          i++;
-                          out.print("<td>"+medicalSearchResult.get(i)+"</td>");
-                          String medical_id=medicalSearchResult.get(i);
-                          i++;
-                          out.print("<td>"+medicalSearchResult.get(i)+"</td>");
-                          i++;
-                          out.print("<td>"+medicalSearchResult.get(i)+"</td>");
-                          i++;
-                          out.print("<td>"+medicalSearchResult.get(i)+"</td>");
-                          i++;
-                          if(medicalSearchResult.get(i).equals(session.getAttribute("organization_id"))){
-                              out.print("<td><a href='../edit/medical_edit.jsp?national_id="+national_id+"&medical_id="+medical_id+"'><button class='btn btn-primary btn-sm'>Edit</button></a></td>");
-                              out.print("<td><a href='../delete/medical_delete.jsp?national_id="+national_id+"&medical_id="+medical_id+"'><button class='btn btn-danger btn-sm'>Delete</button></a></td>");
-                          }
-                          else{
-                              out.print("<td><button class='btn btn-primary btn-sm' disabled>Edit</button></td>");
-                              out.print("<td><button class='btn btn-danger btn-sm' disabled>Delete</button></td>");
-                          }
-                
-                          out.print("</tr>");
-                          }
-                      }
+                        if (medicalSearchResult.size() > 0) {
+                            for (int i = 0; i < medicalSearchResult.size(); i++) {
+                                out.print("<tr class='active'>");
+                                out.print("<td>" + medicalSearchResult.get(i) + "</td>");
+                                i++;
+                                out.print("<td>" + medicalSearchResult.get(i) + "</td>");
+                                i++;
+                                out.print("<td>" + medicalSearchResult.get(i) + "</td>");
+                                String medical_id = medicalSearchResult.get(i);
+                                i++;
+                                out.print("<td>" + medicalSearchResult.get(i) + "</td>");
+                                i++;
+                                out.print("<td>" + medicalSearchResult.get(i) + "</td>");
+                                i++;
+                                out.print("<td>" + medicalSearchResult.get(i) + "</td>");
+                                i++;
+                                if (medicalSearchResult.get(i).equals(session.getAttribute("organization_id"))) {
+                                    out.print("<td><a href='../edit/medical_edit.jsp?national_id=" + national_id + "&medical_id=" + medical_id + "'><button class='btn btn-primary btn-sm'>Edit</button></a></td>");
+                                    out.print("<td><a href='../delete/medical_delete.jsp?national_id=" + national_id + "&medical_id=" + medical_id + "'><button class='btn btn-danger btn-sm'>Delete</button></a></td>");
+                                } else {
+                                    out.print("<td><button class='btn btn-primary btn-sm' disabled>Edit</button></td>");
+                                    out.print("<td><button class='btn btn-danger btn-sm' disabled>Delete</button></td>");
+                                }
+
+                                out.print("</tr>");
+                            }
+                        }
                     %>
 
                 </tbody>

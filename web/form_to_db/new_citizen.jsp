@@ -14,7 +14,6 @@
 
 <%
 
-
     ArrayList<String> citizenInfo = new ArrayList<String>();
     citizenInfo.add(request.getParameter("name_en"));
     citizenInfo.add(request.getParameter("name_bn"));
@@ -68,7 +67,7 @@
 
     AddCitizenInfo newCitizen = new AddCitizenInfo();
     boolean decision = newCitizen.insert(finalid, citizenInfo, dateNow);
-    
+
     if (!decision) {
         out.print("0");
     } else {

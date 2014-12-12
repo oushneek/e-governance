@@ -31,7 +31,7 @@ public class Citizen {
 
             String sql = "SELECT max(national_id) as maximum FROM citizen where national_id like '" + tempNationalID + "%' ";
             ResultSet rs = stmt.executeQuery(sql);
-                    //STEP 5: Extract data from result set
+            //STEP 5: Extract data from result set
             //String email_C = null;
             while (rs.next()) {
                 //Retrieve by column name
@@ -69,7 +69,7 @@ public class Citizen {
             return "Done";
 
         } catch (SQLException ex) {
-                      // Logger.getLogger(EntryForm.class.getName()).log(Level.SEVERE, null, ex);
+            // Logger.getLogger(EntryForm.class.getName()).log(Level.SEVERE, null, ex);
 
             return "Failed 1";
         } catch (ClassNotFoundException ex) {
@@ -96,7 +96,7 @@ public class Citizen {
 
             String sql = "SELECT * FROM citizen";
             ResultSet rs = stmt.executeQuery(sql);
-                    //STEP 5: Extract data from result set
+            //STEP 5: Extract data from result set
             //String email_C = null;
             while (rs.next()) {
                 //Retrieve by column name

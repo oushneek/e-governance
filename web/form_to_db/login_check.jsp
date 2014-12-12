@@ -37,6 +37,7 @@
         session.setAttribute("type_id", loginDetails.get(0));
         session.setAttribute("organization_id", loginDetails.get(1));
         session.setAttribute("organization_name", loginDetails.get(2));
+        session.setMaxInactiveInterval(0);
 
     }
 %>

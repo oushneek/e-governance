@@ -26,7 +26,7 @@ public class MaxNationalID {
 
             String sql = "SELECT max(national_id) as maximum FROM citizen where national_id like '" + tempNationalID + "%' ";
             ResultSet rs = stmt.executeQuery(sql);
-                    //STEP 5: Extract data from result set
+            //STEP 5: Extract data from result set
             //String email_C = null;
             while (rs.next()) {
                 //Retrieve by column name

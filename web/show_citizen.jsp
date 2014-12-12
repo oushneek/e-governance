@@ -16,15 +16,15 @@
     <body>
         <h1>Hello World!</h1>
         <%
-        
-            ArrayList<String> info=new ArrayList<String>();
-            Citizen citizens=new Citizen();
-            info=citizens.showcitizen();
-            for(int i=0;i<info.size();i++){
+
+            ArrayList<String> info = new ArrayList<String>();
+            Citizen citizens = new Citizen();
+            info = citizens.showcitizen();
+            for (int i = 0; i < info.size(); i++) {
                 out.println(info.get(i));
             }
-        
-        
+
+
         %>
     </body>
 </html>

@@ -34,7 +34,7 @@ public class Bank {
             return "Done";
 
         } catch (SQLException ex) {
-                      // Logger.getLogger(EntryForm.class.getName()).log(Level.SEVERE, null, ex);
+            // Logger.getLogger(EntryForm.class.getName()).log(Level.SEVERE, null, ex);
 
             return "Failed 1";
         } catch (ClassNotFoundException ex) {
@@ -102,7 +102,7 @@ public class Bank {
             }
 
         } catch (SQLException ex) {
-                      // Logger.getLogger(EntryForm.class.getName()).log(Level.SEVERE, null, ex);
+            // Logger.getLogger(EntryForm.class.getName()).log(Level.SEVERE, null, ex);
 
             return false;
         } catch (ClassNotFoundException ex) {
@@ -131,7 +131,7 @@ public class Bank {
             return "Done";
 
         } catch (SQLException ex) {
-                      // Logger.getLogger(EntryForm.class.getName()).log(Level.SEVERE, null, ex);
+            // Logger.getLogger(EntryForm.class.getName()).log(Level.SEVERE, null, ex);
 
             return "Failed 1";
         } catch (ClassNotFoundException ex) {

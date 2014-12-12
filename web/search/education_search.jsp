@@ -8,15 +8,21 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="database.*"%>
 <!DOCTYPE html>
+<%
+    //Secure the Page from UnAuthorised Access
+    if (session.getAttribute("organization_id") == null) {
+        response.setHeader("Refresh", "0;url=../index.jsp");
+    }
+%>
 <!-- Search Result Handle -->
 <%
-String national_id = request.getParameter("national_id");
+    String national_id = request.getParameter("national_id");
 
-SearchEducationInfo education = new SearchEducationInfo();
+    SearchEducationInfo education = new SearchEducationInfo();
 
-ArrayList<String> educationSearchResult = new ArrayList<String>();
+    ArrayList<String> educationSearchResult = new ArrayList<String>();
 
-educationSearchResult = education.search(national_id);
+    educationSearchResult = education.search(national_id);
 
 %>
 
@@ -34,13 +40,11 @@ educationSearchResult = education.search(national_id);
 
     <div class="row show-grid">
         <div class="col-lg-12" style="padding-left: 8%;padding-top: 2%;padding-right:6%">
-            <%
-            if(educationSearchResult.isEmpty()){
-                out.print("<div class='alert alert-danger'>No Record Found with this National ID</a></div>");
-            }
-            else{
-                 out.print("<div class='alert alert-success'>Result Found</a></div>");
-            }
+            <%                if (educationSearchResult.isEmpty()) {
+                    out.print("<div class='alert alert-danger'>No Record Found with this National ID</a></div>");
+                } else {
+                    out.print("<div class='alert alert-success'>Result Found</a></div>");
+                }
             %>
             <div class="panel panel-default">
                 <div class="panel-heading">New Search</div>
@@ -77,38 +81,37 @@ educationSearchResult = education.search(national_id);
                 </thead>
                 <tbody>
                     <%
-                      if(educationSearchResult.size()>0){
-                          for(int i=0;i<educationSearchResult.size();i++){
-                          out.print("<tr class='active'>");
-                          out.print("<td>"+educationSearchResult.get(i)+"</td>");
-                          i++;
-                          out.print("<td>"+educationSearchResult.get(i)+"</td>");
-                          i++;
-                          out.print("<td>"+educationSearchResult.get(i)+"</td>");
-                          String education_id = educationSearchResult.get(i);
-                          i++;
-                          out.print("<td>"+educationSearchResult.get(i)+"</td>");
-                          i++;
-                          out.print("<td>"+educationSearchResult.get(i)+"</td>");
-                          i++;
-                          out.print("<td>"+educationSearchResult.get(i)+"</td>");
-                          i++;
-                          out.print("<td>"+educationSearchResult.get(i)+"</td>");
-                          i++;
-                          out.print("<td>"+educationSearchResult.get(i)+"</td>");
-                          i++;
-                          if(educationSearchResult.get(i).equals(session.getAttribute("organization_id"))){
-                              out.print("<td><a href='../edit/education_edit.jsp?national_id="+national_id+"&education_id="+education_id+"'><button class='btn btn-primary btn-sm'>Edit</button></a></td>");
-                              out.print("<td><a href='../delete/education_delete.jsp?national_id="+national_id+"&education_id="+education_id+"'><button class='btn btn-danger btn-sm'>Delete</button></a></td>");
-                          }
-                          else{
-                              out.print("<td><button class='btn btn-primary btn-sm' disabled>Edit</button></td>");
-                              out.print("<td><button class='btn btn-danger btn-sm' disabled>Delete</button></td>");
-                          }
-                
-                          out.print("</tr>");
-                          }
-                      }
+                        if (educationSearchResult.size() > 0) {
+                            for (int i = 0; i < educationSearchResult.size(); i++) {
+                                out.print("<tr class='active'>");
+                                out.print("<td>" + educationSearchResult.get(i) + "</td>");
+                                i++;
+                                out.print("<td>" + educationSearchResult.get(i) + "</td>");
+                                i++;
+                                out.print("<td>" + educationSearchResult.get(i) + "</td>");
+                                String education_id = educationSearchResult.get(i);
+                                i++;
+                                out.print("<td>" + educationSearchResult.get(i) + "</td>");
+                                i++;
+                                out.print("<td>" + educationSearchResult.get(i) + "</td>");
+                                i++;
+                                out.print("<td>" + educationSearchResult.get(i) + "</td>");
+                                i++;
+                                out.print("<td>" + educationSearchResult.get(i) + "</td>");
+                                i++;
+                                out.print("<td>" + educationSearchResult.get(i) + "</td>");
+                                i++;
+                                if (educationSearchResult.get(i).equals(session.getAttribute("organization_id"))) {
+                                    out.print("<td><a href='../edit/education_edit.jsp?national_id=" + national_id + "&education_id=" + education_id + "'><button class='btn btn-primary btn-sm'>Edit</button></a></td>");
+                                    out.print("<td><a href='../delete/education_delete.jsp?national_id=" + national_id + "&education_id=" + education_id + "'><button class='btn btn-danger btn-sm'>Delete</button></a></td>");
+                                } else {
+                                    out.print("<td><button class='btn btn-primary btn-sm' disabled>Edit</button></td>");
+                                    out.print("<td><button class='btn btn-danger btn-sm' disabled>Delete</button></td>");
+                                }
+
+                                out.print("</tr>");
+                            }
+                        }
                     %>
 
                 </tbody>

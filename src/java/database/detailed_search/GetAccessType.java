@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package database.detailed_search;
 
 /**
@@ -39,7 +38,7 @@ public class GetAccessType {
             //STEP 5: Extract data from result set
 
             while (rs.next()) {
-               // accessInfo.add(rs.getString("access_id"));
+                // accessInfo.add(rs.getString("access_id"));
                 accessInfo.add(rs.getString("access_type_id"));
             }
 
