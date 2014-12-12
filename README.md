@@ -58,7 +58,5 @@ Education | a@a.com | a
 * Md Abu Shahriar Ratul
 * Tazbeea Tazakka Oushneek
 
-Department of Computer Science and Engineering
-
-Shahjalal University of Science and Technology,Sylhet
+_Department of Computer Science and Engineering,Shahjalal University of Science and Technology,Sylhet_
 
