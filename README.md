@@ -40,7 +40,7 @@ public static final String USER = "root";
 public static final String PASS = "";
 ```
 
-### Step 5 (Start Servers)
+### Step 5 (Start Server)
 Start `Apache Tomcat` and `MySQL`
 
 ### Step 6 (Import project)
@@ -52,3 +52,7 @@ Type | Email | Password
 ------------ | ------------- | -------------
 Govt | gov@gov.bd | gov
 Education | a@a.com | a
+
+
+## Credit
+@ratulcse 
