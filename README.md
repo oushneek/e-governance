@@ -26,7 +26,7 @@ After creating the Database import the below SQL File to create and seed the tab
 [Download Database SQL File](https://github.com/ratulcse10/e-governance/blob/master/e_governance.sql)
 
 ### Step 4 (Setup Database Username and Password)
-Please check the database.connection.ConnectDetails Class and Change the Username and Password According to your Database Login Details
+Please check the `database.connection.ConnectDetails` Class and Change the Username and Password According to your Database Login Details
 
 Also if you change the database name, please change here too
 ```java
