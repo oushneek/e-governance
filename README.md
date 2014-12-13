@@ -86,13 +86,15 @@ Administration | gov@gov.bd | gov
 ## Demo Nationl ID Details for Searching
 Name | National ID
 ------------ | -------------
+Zakaria Faruq | 1954004001
 Tazkirut Tahleel Proteety | 1986001001
 Tazbeea Tazakka | 1993001001
+Md. Abu Shahriar Ratul | 1992001001
 
 ## Development Credit
 **SUST_Nirontor**
-  * Md Abu Shahriar Ratul
+  * Md. Abu Shahriar Ratul
   * Tazbeea Tazakka Oushneek
 
-**Department of Computer Science and Engineering,Shahjalal University of Science and Technology,Sylhet**
+**Department of Computer Science and Engineering,Shahjalal University of Science and Technology(SUST),Sylhet**
 
