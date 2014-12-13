@@ -47,12 +47,41 @@ Start `Apache Tomcat` and `MySQL`
 Import the Project in Netbeans and Click Run
 
 
-## Sample Demo Login Details
-Type | Email | Password
+## Demo Login Details
+### Education
+Name | Email | Password
 ------------ | ------------- | -------------
-Govt | gov@gov.bd | gov
-Education | a@a.com | a
+Ideal School and College | ideal@edu.gov.bd | idealedu
+Motijheel Model School  | motijheel@edu.gov.bd | motijheeledu
 
+### Bank
+Name | Email | Password
+------------ | ------------- | -------------
+Dhaka Bank | basic@bank.gov.bd | dhakabank
+Basic Bank  | dhanmondi@police.gov.bd | basicbank
+
+### Police
+Name | Email | Password
+------------ | ------------- | -------------
+Dhanmondi Thana | dhanmondi@police.gov.bd | dhanmondipolice
+Ramna Thana  | ramna@police.gov.bd | ramnapolice
+
+### Hospital
+Name | Email | Password
+------------ | ------------- | -------------
+Islami Bank Hospital | islami@medical.gov.bd | islami
+Square Hospital  | square@medical.gov.bd | square
+
+### Job
+Name | Email | Password
+------------ | ------------- | -------------
+Agrani Bank | agrani@job.gov.bd | agranijob
+Square Hospital  | square@job.gov.bd | squarejob
+
+### Govt
+Name | Email | Password
+------------ | ------------- | -------------
+Administration | gov@gov.bd | gov
 
 ## Development Credit
 **SUST_Nirontor**
