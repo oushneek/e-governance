@@ -88,5 +88,5 @@ Administration | gov@gov.bd | gov
   * Md Abu Shahriar Ratul
   * Tazbeea Tazakka Oushneek
 
-_Department of Computer Science and Engineering,Shahjalal University of Science and Technology,Sylhet_
+**Department of Computer Science and Engineering,Shahjalal University of Science and Technology,Sylhet**
 
