@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 12, 2014 at 11:27 PM
+-- Generation Time: Dec 13, 2014 at 04:23 PM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -75,18 +75,18 @@ CREATE TABLE IF NOT EXISTS `banking` (
   PRIMARY KEY (`banking_id`),
   KEY `national_id` (`national_id`),
   KEY `organization_id` (`organization_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `banking`
 --
 
 INSERT INTO `banking` (`banking_id`, `national_id`, `organization_id`, `add_bank_date`) VALUES
-(1, 1993001001, 3, '2014-12-01 13:41:48'),
-(2, 1993001001, 4, '2014-12-01 13:48:27'),
-(4, 1986001001, 3, '2014-12-08 07:12:18'),
-(5, 1993001003, 4, '2014-12-08 07:17:34'),
-(6, 1992001001, 4, '2014-12-08 07:18:32');
+(1, 1993001001, 3, '2014-12-13 14:58:43'),
+(2, 1954004001, 3, '2014-12-13 14:58:49'),
+(3, 1986001001, 4, '2014-12-13 14:59:18'),
+(4, 1992001001, 4, '2014-12-13 15:00:13'),
+(5, 1993001001, 4, '2014-12-13 15:00:37');
 
 -- --------------------------------------------------------
 
@@ -117,15 +117,10 @@ CREATE TABLE IF NOT EXISTS `citizen` (
 --
 
 INSERT INTO `citizen` (`national_id`, `name_en`, `name_bn`, `father`, `mother`, `date_of_birth`, `birth_place`, `blood_group`, `religion`, `present_address`, `permanent_address`, `date_of_death`, `create_date`, `update_date`) VALUES
-(1954004001, 'Zakaria Faruq', 'faruq', 'Mukhles Udiin Ahmed', 'Suraiya Begum', '1954-01-01', 'Barisal', 'B+', 'Islam', 'Gopibag', 'Gopibag', NULL, '2014-12-08 07:09:38', NULL),
-(1986001001, 'Tazkirut Tahleel Proteety', 'proteety', 'Zakaria Faruq', 'Kamrun Naher', '1986-07-13', 'Dhaka', 'A+', 'Islam', 'Gopibag', 'Gopibag', NULL, '2014-12-08 07:02:15', NULL),
-(1989001001, 'Tasdiq Bil Jinan Promitee', 'Promitee', 'A.Q.M. Qibriya ', 'Rukhsana Begum', '1989-09-18', 'Dhaka', 'o+', 'Islam', 'Lalmatia,Dhaka', 'Gopibag', NULL, '2014-12-08 07:05:31', '2014-12-08 07:06:39'),
-(1992001001, 'Md. Abu Shahriar Ratul', 'ratul', '', '', '1992-10-27', 'Dhaka', 'o+', 'Islam', 'Sylhet', 'Manikgonj', NULL, '2014-12-01 10:14:08', '2014-12-08 07:06:46'),
-(1993001001, 'Tazbeea Tazakka', 'তাজবীয়া তাজাক্কা', 'Zakaria Faruq', 'Kamrun Naher', '1993-03-31', 'Dhaka', 'B+', 'Islam', 'Gopibag', 'Gopibag', NULL, '2014-12-01 09:33:20', '2014-12-01 09:38:34'),
-(1993001002, 'Tazbeea Tazakka', 'à¦¤à¦¾à¦?à¦¬à§?à§?à¦¾ à¦¤à¦¾à¦?à¦¾à¦?à§?à¦?à¦¾', 'Zakaria Faruq', 'Kamrun Naher', '1993-03-31', 'Dhaka', 'B+', 'Islam', 'Gopibag', 'Gopibag', NULL, '2014-12-01 09:40:24', NULL),
-(1993001003, 'Iqrar Bil Lisan Shosmit', 'Shosmit', 'A.Q.M. Qibriya ', 'Rukhsana Begum', '1993-06-20', 'Dhaka', 'AB+', 'Islam', 'Lalmatia,Dhaka', 'Gopibag,Dhaka', NULL, '2014-12-08 07:08:06', NULL),
-(2001009001, 'Rahim', 'rahim', 'Karim', 'Rahima', '2001-01-01', 'Tangail', 'A+', 'Islam', 'Sylhet', 'Sylhet', NULL, '2014-12-01 10:20:56', NULL),
-(2014003001, 'Md Abu Shahriar Ratul', 'Md Abu Shahriar Ratul', 'ABC', 'ABC', '2014-12-10', 'Chittagong', 'A+', 'Islam', '6600 NE 78th Ct. B4,Suite 89903', '6600 NE 78th Ct. B4,Suite 89903', NULL, '2014-12-12 21:28:47', NULL);
+(1954004001, 'Zakaria Faruq', '???????? ?????', 'Mukhles Udiin Ahmed', 'Suraiya Begum', '1954-01-01', 'Barisal', 'B+', 'Islam', 'Dhaka', 'Dhaka', NULL, '2014-12-13 14:52:21', NULL),
+(1986001001, 'Tazkirut Tahleel Proteety', '???????? ??????', 'Zakaria Faruq', 'Kamrun Naher', '1986-07-13', 'Dhaka', 'A+', 'Islam', 'Dhaka', 'Dhaka', NULL, '2014-12-13 14:51:14', NULL),
+(1992001001, 'Md. Abu Shahriar Ratul', '?????', 'Md. Abdul Ali', 'Sufia Khatun', '1992-10-27', 'Dhaka', 'O+', 'Islam', 'Surma Gate, Akhalia , Sylhet', 'Manikgonj', NULL, '2014-12-13 14:48:37', NULL),
+(1993001001, 'Tazbeea Tazakka', '??????? ????????', 'Zakaria Faruq', 'Kamrun Naher', '1993-03-31', 'Dhaka', 'B+', 'Islam', 'Kumargaon, Sylhet', 'Dhaka', NULL, '2014-12-13 14:49:56', NULL);
 
 -- --------------------------------------------------------
 
@@ -143,16 +138,15 @@ CREATE TABLE IF NOT EXISTS `criminal` (
   PRIMARY KEY (`criminal_id`),
   KEY `national_id` (`national_id`,`organization_id`),
   KEY `organization_id` (`organization_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `criminal`
 --
 
 INSERT INTO `criminal` (`criminal_id`, `national_id`, `organization_id`, `date`, `description`, `add_crime_date`) VALUES
-(1, 1993001002, 5, '2014-12-04', 'Churi', '2014-12-02 21:53:57'),
-(2, 2001009001, 11, '2014-01-23', 'Killing 1 person', '2014-12-08 07:25:14'),
-(3, 1993001001, 5, '2014-12-11', 'churi', '2014-12-11 14:16:01');
+(1, 1992001001, 5, '2011-09-20', 'Driving Speed Case\r\n', '2014-12-13 15:10:51'),
+(2, 1993001001, 11, '2012-10-27', 'Driving car without license', '2014-12-13 15:12:43');
 
 -- --------------------------------------------------------
 
@@ -179,12 +173,12 @@ CREATE TABLE IF NOT EXISTS `education` (
 --
 
 INSERT INTO `education` (`education_id`, `national_id`, `organization_id`, `exam_name`, `year`, `board`, `cgpa`, `add_edu_date`) VALUES
-(1, 1993001002, 1, 'ssc', 2008, 'Dhaka', 4.8, '2014-12-01 17:01:31'),
-(2, 1986001001, 1, 'ssc', 2001, 'dhaka', 4.5, '2014-12-08 08:00:11'),
-(3, 1986001001, 1, 'hsc', 2003, 'dhaka', 3.26, '2014-12-08 08:11:09'),
-(4, 1993001001, 1, 'hsc', 2010, 'dhaka', 5, '2014-12-08 08:12:25'),
-(5, 1992001001, 2, 'ssc', 2008, 'dhaka', 5, '2014-12-08 08:13:30'),
-(6, 1992001001, 2, 'hsc', 2010, 'dhaka', 5, '2014-12-08 08:13:51');
+(1, 1993001001, 1, 'ssc', 2008, 'dhaka', 5, '2014-12-13 14:55:02'),
+(2, 1993001001, 1, 'hsc', 2010, 'dhaka', 5, '2014-12-13 14:55:29'),
+(3, 1992001001, 1, 'ssc', 2008, 'dhaka', 5, '2014-12-13 14:55:47'),
+(4, 1992001001, 1, 'hsc', 2010, 'dhaka', 5, '2014-12-13 14:56:07'),
+(5, 1986001001, 2, 'ssc', 2001, 'dhaka', 3.5, '2014-12-13 14:56:26'),
+(6, 1986001001, 2, 'hsc', 2003, 'dhaka', 3.26, '2014-12-13 14:56:48');
 
 -- --------------------------------------------------------
 
@@ -203,17 +197,18 @@ CREATE TABLE IF NOT EXISTS `job` (
   PRIMARY KEY (`job_id`),
   KEY `national_id` (`national_id`),
   KEY `organization_id` (`organization_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `job`
 --
 
 INSERT INTO `job` (`job_id`, `national_id`, `organization_id`, `joining_date`, `leaving_date`, `post`, `add_job_date`) VALUES
-(1, 1992001001, 9, '2014-12-04', '2014-12-06', 'Software Developer', '2014-12-02 22:07:44'),
-(2, 1993001003, 9, '2013-03-01', '2014-03-01', 'Teacher', '2014-12-08 08:20:12'),
-(3, 1986001001, 12, '2012-02-15', '2013-12-31', 'Assistant Officer', '2014-12-08 08:21:09'),
-(4, 1993001001, 9, '2014-12-11', '2014-12-11', 'SQA', '2014-12-11 14:28:29');
+(1, 1954004001, 9, '1990-01-01', '2013-12-31', 'Teacher', '2014-12-13 15:19:28'),
+(2, 1986001001, 9, '2008-01-01', '2010-02-14', 'Teacher', '2014-12-13 15:20:16'),
+(3, 1986001001, 12, '2010-02-15', '2014-12-15', 'Assistant Officer', '2014-12-13 15:21:12'),
+(4, 1993001001, 12, '2013-01-01', '2014-01-01', 'Junior Officer', '2014-12-13 15:22:10'),
+(5, 1992001001, 13, '2012-01-01', '2013-01-01', 'Software Engineer', '2014-12-13 15:23:05');
 
 -- --------------------------------------------------------
 
@@ -231,17 +226,15 @@ CREATE TABLE IF NOT EXISTS `medical` (
   PRIMARY KEY (`medical_id`),
   KEY `national_id` (`national_id`,`organization_id`),
   KEY `organization_id` (`organization_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `medical`
 --
 
 INSERT INTO `medical` (`medical_id`, `national_id`, `organization_id`, `date`, `description`, `add_medical_date`) VALUES
-(1, 2001009001, 6, '2014-11-30', 'medical information test', '2014-12-02 07:07:15'),
-(2, 1954004001, 6, '2013-11-23', 'Operation ', '2014-12-08 08:24:14'),
-(3, 1993001003, 7, '1996-01-01', 'testestest', '2014-12-08 08:25:24'),
-(4, 1993001001, 6, '2014-12-11', 'hat vangcce', '2014-12-11 14:24:59');
+(1, 1954004001, 6, '2013-12-03', 'Operation of Eye', '2014-12-13 15:03:03'),
+(2, 1986001001, 7, '2012-11-01', 'Appendictities  Operation\r\n', '2014-12-13 15:08:16');
 
 -- --------------------------------------------------------
 
@@ -259,24 +252,25 @@ CREATE TABLE IF NOT EXISTS `organization` (
   UNIQUE KEY `email` (`email`),
   UNIQUE KEY `email_2` (`email`),
   KEY `type_id` (`type_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
 
 --
 -- Dumping data for table `organization`
 --
 
 INSERT INTO `organization` (`organization_id`, `type_id`, `organization_name`, `email`, `password`) VALUES
-(1, 1, 'A School', 'a@a.com', 'a'),
-(2, 1, 'B School', 'b@b.com', 'b'),
-(3, 2, 'P Bank', 'p@p.com', 'p'),
-(4, 2, 'Q Bank', 'q@q.com', 'q'),
-(5, 3, 'Dhanmondi Thana', 'police@police.com', 'police'),
-(6, 4, 'X Medical', 'x@x.com', 'x'),
-(7, 4, 'Y Medical', 'y@y.com', 'y'),
-(9, 5, 'A School', 'a@job.com', 'a'),
-(10, 6, 'admin', 'gov@gov.com', 'gov'),
-(11, 3, 'Ramna Thana', 'ramna@ramna.com', 'ramna'),
-(12, 5, 'P Bank', 'p@job.com', 'p');
+(1, 1, 'Ideal School and College', 'ideal@edu.gov.bd', 'idealedu'),
+(2, 1, 'Motijheel Model School ', 'motijheel@edu.gov.bd', 'motijheeledu'),
+(3, 2, 'Dhaka Bank', 'dhaka@bank.gov.bd', 'dhakabank'),
+(4, 2, 'Basic Bank', 'basic@bank.gov.bd', 'basicbank'),
+(5, 3, 'Dhanmondi Thana', 'dhanmondi@police.gov.bd', 'dhanmondipolice'),
+(6, 4, 'Islami Bank Hospital', 'islami@medical.gov.bd', 'islami'),
+(7, 4, 'Square Hospital', 'square@medical.gov.bd', 'square'),
+(9, 5, 'Ideal School and College', 'ideal@job.gov.bd', 'idealjob'),
+(10, 6, 'Administration', 'gov@gov.bd', 'gov'),
+(11, 3, 'Ramna Thana', 'ramna@police.gov.bd', 'ramnapolice'),
+(12, 5, 'Agrani Bank', 'agrani@job.gov.bd', 'agranijob'),
+(13, 5, 'Square Hospital', 'square@job.gov.bd', 'squarejob');
 
 -- --------------------------------------------------------
 
